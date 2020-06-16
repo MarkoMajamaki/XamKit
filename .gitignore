@@ -1,0 +1,17 @@
+XamKit.Droid/bin/
+XamKit.Droid/obj/
+XamKit.iOS/bin/
+XamKit.iOS/obj/
+XamKit.Shared/bin/
+XamKit.Shared/obj/
+XamKit.UWP/bin/
+XamKit.UWP/obj/
+XamKit.TestApp/XamKit.TestApp.Android/obj/
+XamKit.TestApp/XamKit.TestApp.Android/bin/
+XamKit.TestApp/XamKit.TestApp.UWP/obj/
+XamKit.TestApp/XamKit.TestApp.UWP/bin/
+XamKit.TestApp/XamKit.TestApp/bin/
+XamKit.TestApp/XamKit.TestApp/obj/
+XamKit.TestApp/XamKit.TestApp.iOS/obj/
+XamKit.TestApp/XamKit.TestApp.iOS/bin/
+
