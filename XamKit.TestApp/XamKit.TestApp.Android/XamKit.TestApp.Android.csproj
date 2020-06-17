@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -98,7 +97,7 @@
       <Name>XamKit.Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\XamKit.TestApp\XamKit.TestApp.csproj">
-      <Project>{DCDCD8C0-33C5-4ED3-B252-D2184D38C503}</Project>
+      <Project>{764B4B78-3FAE-4EC1-89C4-2C6B2E355322}</Project>
       <Name>XamKit.TestApp</Name>
     </ProjectReference>
   </ItemGroup>
