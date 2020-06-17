@@ -9,7 +9,7 @@
         <xam:Colors/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Separator.DefaultStyle" TargetType="one:Separator">
+    <Style x:Key="Separator.DefaultStyle" TargetType="xam:Separator">
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
         <Setter Property="TextMargin" Value="10,10,0,0"/>
@@ -17,9 +17,9 @@
         <Setter Property="FontSize" Value="15"/>
     </Style>
 
-    <Style TargetType="one:Separator" BasedOn="{StaticResource Separator.DefaultStyle}"/>
+    <Style TargetType="xam:Separator" BasedOn="{StaticResource Separator.DefaultStyle}"/>
 
-    <Style x:Key="Separator.MainMenuStyle" TargetType="one:Separator">
+    <Style x:Key="Separator.MainMenuStyle" TargetType="xam:Separator">
         <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
         <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
         <Setter Property="TextMargin" Value="16,12,0,0"/>
@@ -28,7 +28,7 @@
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
-    <Style x:Key="Separator.SmallStyle" TargetType="one:Separator">
+    <Style x:Key="Separator.SmallStyle" TargetType="xam:Separator">
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
         <Setter Property="TextMargin" Value="16,8,0,8"/>
@@ -37,7 +37,7 @@
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
-    <Style x:Key="Separator.LargeStyle" TargetType="one:Separator">
+    <Style x:Key="Separator.LargeStyle" TargetType="xam:Separator">
         <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
         <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
         <Setter Property="TextMargin" Value="16,12,0,12"/>

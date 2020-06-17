@@ -9,7 +9,7 @@
         <xam:Colors/>
    </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Button.TextStyle" TargetType="one:Button">
+    <Style x:Key="Button.TextStyle" TargetType="xam:Button">
         <Setter Property="TextMargin">
             <OnPlatform Android="8,11" iOS="8,10" Default="8,11"/>
         </Setter>
@@ -45,9 +45,9 @@
         <Setter Property="BackgroundPressedColor" Value="Transparent"/>
     </Style>
 
-    <Style TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}"/>
+    <Style TargetType="xam:Button" BasedOn="{StaticResource Button.TextStyle}"/>
     
-    <Style x:Key="Button.OutlinedStyle" TargetType="one:Button">
+    <Style x:Key="Button.OutlinedStyle" TargetType="xam:Button">
         <Setter Property="TextMargin">
             <OnPlatform Android="16,10" iOS="16,10" Default="16,10"/>
         </Setter>
@@ -87,7 +87,7 @@
         <Setter Property="BackgroundDisabledColor" Value="Transparent"/>
     </Style>
 
-    <Style x:Key="Button.ContainedStyle" TargetType="one:Button">
+    <Style x:Key="Button.ContainedStyle" TargetType="xam:Button">
         <Setter Property="TextMargin">
             <OnPlatform Android="16,10" iOS="16,10" Default="16,10"/>
         </Setter>
@@ -127,7 +127,7 @@
     </Style>
 
     <!--Default MenuItem style-->
-    <Style x:Key="Button.MenuStyle" TargetType="one:Button">
+    <Style x:Key="Button.MenuStyle" TargetType="xam:Button">
         <Setter Property="TextMargin">
             <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>
         </Setter>
@@ -166,7 +166,7 @@
         <Setter Property="BackgroundDisabledColor" Value="Transparent"/>                
     </Style>
 
-    <Style x:Key="Button.Black.OutlinedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+    <Style x:Key="Button.Black.OutlinedStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="ExtraTextColor" Value="Black"/>
         <Setter Property="IconColor" Value="Black"/>
@@ -184,7 +184,7 @@
         <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray5}"/> 
     </Style>
 
-     <Style x:Key="Button.Black.ContainedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+     <Style x:Key="Button.Black.ContainedStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="ExtraTextColor" Value="Black"/>
         <Setter Property="IconColor" Value="Black"/>
@@ -203,7 +203,7 @@
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
-    <Style x:Key="Button.BlackTextStyle" TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}">
+    <Style x:Key="Button.BlackTextStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.TextStyle}">
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="ExtraTextColor" Value="Black"/>
         <Setter Property="IconColor" Value="Black"/>
@@ -221,7 +221,7 @@
         <Setter Property="BorderPressedColor" Value="Transparent"/>
     </Style>
 
-    <Style x:Key="Button.NavigationBar.BlackStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+    <Style x:Key="Button.NavigationBar.BlackStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
         <Setter Property="IconPlacement" Value="Top"/>
         <Setter Property="IconWidthRequest" Value="24"/>
         <Setter Property="IconHeightRequest" Value="24"/>
@@ -251,7 +251,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Button.MainMenuStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+    <Style x:Key="Button.MainMenuStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
         <Setter Property="TextMargin">
             <Setter.Value>
                 <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>

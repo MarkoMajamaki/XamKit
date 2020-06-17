@@ -13,7 +13,7 @@
 
     <!-- Modal navigation page -->
 
-    <Style x:Key="NavigationPage.ModalStyle" TargetType="one:NavigationPage">
+    <Style x:Key="NavigationPage.ModalStyle" TargetType="xam:NavigationPage">
         <Setter Property="BackgroundColor" Value="White"/>
         <Setter Property="ModalColor" Value="Black"/>
         <Setter Property="ModalColorOpacity" Value="0.2"/>
@@ -41,7 +41,7 @@
 
     <!--NavigationPage default style-->
 
-    <Style x:Key="NavigationPage.DefaultStyle" TargetType="one:NavigationPage">
+    <Style x:Key="NavigationPage.DefaultStyle" TargetType="xam:NavigationPage">
         <Setter Property="BackgroundColor" Value="White"/>
         <Setter Property="ModalColor" Value="Black"/>
         <Setter Property="ModalColorOpacity" Value="0.2"/>
@@ -63,6 +63,6 @@
         </Setter>
     </Style>
     
-    <Style TargetType="one:NavigationPage" BasedOn="{StaticResource NavigationPage.DefaultStyle}"/>
+    <Style TargetType="xam:NavigationPage" BasedOn="{StaticResource NavigationPage.DefaultStyle}"/>
 
 </ResourceDictionary>

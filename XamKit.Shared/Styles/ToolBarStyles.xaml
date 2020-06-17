@@ -49,12 +49,12 @@
     <!-- BUTTONS -->
 
     <!--Contained toggle button style for desktop (and tablet)-->
-    <Style x:Key="ToolBarButton.ContainedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.ContainedStyle}"/>
+    <Style x:Key="ToolBarButton.ContainedStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.ContainedStyle}"/>
 
-    <Style x:Key="ToolBarButton.BlackStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}"/>
+    <Style x:Key="ToolBarButton.BlackStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}"/>
 
     <!--Outlined button style for phone (and tablet) -->
-    <Style x:Key="ToolBarButton.OutlinedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+    <Style x:Key="ToolBarButton.OutlinedStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="ExtraTextFontSize" Value="12"/>
         <Setter Property="TextMargin" Value="4,0,4,12"/>
@@ -76,16 +76,16 @@
     </Style>
 
     <!--MenuItem style for all idioms-->
-    <Style x:Key="ToolBarButton.MenuStyle" TargetType="one:Button" BasedOn="{StaticResource Button.MenuStyle}">
+    <Style x:Key="ToolBarButton.MenuStyle" TargetType="xam:Button" BasedOn="{StaticResource Button.MenuStyle}">
         <Setter Property="IconWidthRequest" Value="24"/>
         <Setter Property="IconHeightRequest" Value="24"/>
     </Style>
 
     <!-- Menu button style for desktop (and tablet)-->
-    <Style x:Key="ToolBarToggleButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}"/>
+    <Style x:Key="ToolBarToggleButton.ContainedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}"/>
 
     <!-- Menu button style for phone (and tablet) -->
-    <Style x:Key="ToolBarToggleButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+    <Style x:Key="ToolBarToggleButton.OutlinedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="ExtraTextFontSize" Value="12"/>
         <Setter Property="TextMargin" Value="4,0,4,12"/>
@@ -107,13 +107,13 @@
     </Style>
 
     <!-- Menu toggle button for desktop (and tablet) -->
-    <Style x:Key="ToolBarMenuButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}">
+    <Style x:Key="ToolBarMenuButton.ContainedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}">
         <Setter Property="IconMargin" Value="9"/>
         <Setter Property="AnimationStyle" Value="Default"/>
     </Style>
 
     <!-- Menu toggle button for phone (and tablet) -->
-    <Style x:Key="ToolBarMenuButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+    <Style x:Key="ToolBarMenuButton.OutlinedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="ExtraTextFontSize" Value="12"/>
         <Setter Property="TextMargin" Value="4,0,4,12"/>
@@ -145,23 +145,23 @@
     <!-- VIEW TOOLBAR -->
 
     <!-- ToolBar default style -->
-    <Style x:Key="ToolBar.DefaultStyle" TargetType="one:ToolBar">
+    <Style x:Key="ToolBar.DefaultStyle" TargetType="xam:ToolBar">
         <Setter Property="DefaultResources">
             <Setter.Value>
                 <OnIdiom x:TypeArguments="ResourceDictionary">
                     <OnIdiom.Phone>
                         <ResourceDictionary>
-                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
+                            <Style TargetType="xam:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
                         </ResourceDictionary>
                     </OnIdiom.Phone>
                     <OnIdiom.Desktop>
                         <ResourceDictionary>
-                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.ContainedStyle}"/>
+                            <Style TargetType="xam:Button" BasedOn="{StaticResource ToolBarButton.ContainedStyle}"/>
                         </ResourceDictionary>
                     </OnIdiom.Desktop>
                     <OnIdiom.Tablet>
                         <ResourceDictionary>
-                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
+                            <Style TargetType="xam:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
                         </ResourceDictionary>
                     </OnIdiom.Tablet>
                 </OnIdiom>
@@ -229,14 +229,14 @@
         </Setter>
         <Setter Property="MenuMode">
             <OnIdiom 
-                x:TypeArguments="one:ToolBarMenuModes" 
+                x:TypeArguments="xam:ToolBarMenuModes" 
                 Phone="Bottom" 
                 Tablet="Popup" 
                 Desktop="Popup"/>
         </Setter>
         <Setter Property="ItemsAlignment">
             <OnIdiom 
-                x:TypeArguments="one:ItemsAlignments" 
+                x:TypeArguments="xam:ItemsAlignments" 
                 Phone="Center" 
                 Tablet="Center" 
                 Desktop="Left"/>
@@ -282,7 +282,7 @@
             <DataTemplate>
                 <xam:ToggleButton 
                     IconResourceKey="Icons.dots.svg" 
-                    IconAssemblyName="One">
+                    IconAssemblyName="XamKit.Shared">
                     <xam:ToggleButton.Style>
                         <OnIdiom 
                             x:TypeArguments="Style" 
@@ -302,15 +302,15 @@
         </Setter>
     </Style>
     
-    <Style TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}"/>
+    <Style TargetType="xam:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}"/>
 
     <!-- MODAL VIEW TOOLBAR -->
 
-    <Style x:Key="ToolBar.ModalPageStyle" TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
+    <Style x:Key="ToolBar.ModalPageStyle" TargetType="xam:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
         <Setter Property="DefaultResources">
             <Setter.Value>
                 <ResourceDictionary>
-                    <Style TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}"/>
+                    <Style TargetType="xam:Button" BasedOn="{StaticResource Button.TextStyle}"/>
                 </ResourceDictionary>
             </Setter.Value>
         </Setter>
@@ -345,7 +345,7 @@
             <DataTemplate>
                 <xam:ToggleButton 
                     IconResourceKey="Icons.dots.svg" 
-                    IconAssemblyName="One"
+                    IconAssemblyName="XamKit.Shared"
                     BorderThickness="0"
                     IconWidthRequest="24"
                     IconHeightRequest="24"
@@ -362,7 +362,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ToolBar.NavigationBarStyle" TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
+    <Style x:Key="ToolBar.NavigationBarStyle" TargetType="xam:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
         <Setter Property="ItemsBackgroundColor" Value="Transparent"/>
         <Setter Property="MenuMode" Value="Popup"/>
         <Setter Property="LineHeightRequest" Value="0"/>
@@ -377,8 +377,8 @@
         <Setter Property="DefaultResources">
             <Setter.Value>
                 <ResourceDictionary>
-                    <Style TargetType="one:Button" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}"/>
-                    <Style TargetType="one:MenuButton" BasedOn="{StaticResource MenuButton.NavigationBar.BlackStyle}"/>
+                    <Style TargetType="xam:Button" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}"/>
+                    <Style TargetType="xam:MenuButton" BasedOn="{StaticResource MenuButton.NavigationBar.BlackStyle}"/>
                 </ResourceDictionary>
             </Setter.Value>
         </Setter>
@@ -386,7 +386,7 @@
             <DataTemplate>
                 <xam:ToggleButton 
                     IconResourceKey="Icons.dots.svg" 
-                    IconAssemblyName="One"
+                    IconAssemblyName="XamKit.Shared"
                     Style="{StaticResource ToggleButton.NavigationBar.BlackStyle}">
                 </xam:ToggleButton>
             </DataTemplate>

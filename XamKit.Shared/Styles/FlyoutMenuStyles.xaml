@@ -13,7 +13,7 @@
     </ResourceDictionary.MergedDictionaries>
    
     <!--FlyoutMenu main menu button style for dark background-->
-    <Style x:Key="FlyoutMenu.MainMenuButtonStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+    <Style x:Key="FlyoutMenu.MainMenuButtonStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
         <Setter Property="HeightRequest" Value="40"/>
         <Setter Property="WidthRequest" Value="40"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -23,7 +23,7 @@
         <Setter Property="IconMargin" Value="0"/>
         <Setter Property="Margin" Value="8"/>
         <Setter Property="IconResourceKey" Value="Icons.menu.svg"/>
-        <Setter Property="IconAssemblyName" Value="One"/>
+        <Setter Property="IconAssemblyName" Value="XamKit.Shared"/>
         <Setter Property="IconHeightRequest" Value="24"/>
         <Setter Property="IconWidthRequest" Value="24"/>         
         <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
@@ -32,7 +32,7 @@
     </Style>
 
     <!--FlyoutMenu main menu button style for dark background-->
-    <Style x:Key="FlyoutMenu.UWP.MainMenuButtonStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+    <Style x:Key="FlyoutMenu.UWP.MainMenuButtonStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
         <Setter Property="HeightRequest" Value="32"/>
         <Setter Property="WidthRequest" Value="32"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -42,7 +42,7 @@
         <Setter Property="IconMargin" Value="0"/>
         <Setter Property="Margin" Value="8,4"/>
         <Setter Property="IconResourceKey" Value="Icons.menu.svg"/>
-        <Setter Property="IconAssemblyName" Value="One"/>
+        <Setter Property="IconAssemblyName" Value="XamKit.Shared"/>
         <Setter Property="IconHeightRequest" Value="24"/>
         <Setter Property="IconWidthRequest" Value="24"/>
         <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
@@ -62,7 +62,7 @@
     </DataTemplate>
               
     <!--FlyoutMenu style-->
-    <Style x:Key="FlyoutMenu.TabletStyle" TargetType="one:FlyoutMenu">
+    <Style x:Key="FlyoutMenu.TabletStyle" TargetType="xam:FlyoutMenu">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
         <Setter Property="MainMenuOpeningDuration" Value="400"/>
@@ -83,7 +83,7 @@
         <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
     </Style>
 
-    <Style x:Key="FlyoutMenu.PhoneStyle" TargetType="one:FlyoutMenu">
+    <Style x:Key="FlyoutMenu.PhoneStyle" TargetType="xam:FlyoutMenu">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
         <Setter Property="MainMenuOpeningDuration" Value="400"/>
@@ -104,7 +104,7 @@
         <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
     </Style>
 
-    <Style x:Key="FlyoutMenu.DesktopStyle" TargetType="one:FlyoutMenu">
+    <Style x:Key="FlyoutMenu.DesktopStyle" TargetType="xam:FlyoutMenu">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
         <Setter Property="MainMenuOpeningDuration" Value="250"/>
@@ -126,6 +126,6 @@
         <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
     </Style>
 
-    <Style TargetType="one:FlyoutMenu" BasedOn="{StaticResource FlyoutMenu.PhoneStyle}"/>
+    <Style TargetType="xam:FlyoutMenu" BasedOn="{StaticResource FlyoutMenu.PhoneStyle}"/>
 
 </ResourceDictionary>

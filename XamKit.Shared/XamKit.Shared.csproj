@@ -16,6 +16,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Icons\checkmark.svg" />
+    <None Remove="Icons\dots.svg" />
+    <None Remove="Icons\arrow_up_small.svg" />
+    <None Remove="Icons\navigate_back_android.svg" />
+    <None Remove="Icons\arrow_right_small.svg" />
+    <None Remove="Icons\arrow_down_small.svg" />
+    <None Remove="Icons\navigate_back_ios.svg" />
+    <None Remove="Icons\arrow_popup_right.svg" />
+    <None Remove="Icons\close.svg" />
+    <None Remove="Icons\arrow_drop_down.svg" />
+    <None Remove="Icons\menu.svg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="Styles\ActivityIndicatorStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -87,4 +100,17 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\checkmark.svg" />
+    <EmbeddedResource Include="Icons\dots.svg" />
+    <EmbeddedResource Include="Icons\arrow_up_small.svg" />
+    <EmbeddedResource Include="Icons\navigate_back_android.svg" />
+    <EmbeddedResource Include="Icons\arrow_right_small.svg" />
+    <EmbeddedResource Include="Icons\arrow_down_small.svg" />
+    <EmbeddedResource Include="Icons\navigate_back_ios.svg" />
+    <EmbeddedResource Include="Icons\arrow_popup_right.svg" />
+    <EmbeddedResource Include="Icons\close.svg" />
+    <EmbeddedResource Include="Icons\arrow_drop_down.svg" />
+    <EmbeddedResource Include="Icons\menu.svg" />
+  </ItemGroup>
 </Project>

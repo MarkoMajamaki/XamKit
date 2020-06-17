@@ -9,7 +9,7 @@
         <xam:Colors/>
    </ResourceDictionary.MergedDictionaries>
    
-    <Style x:Key="Switch.Android.Style" TargetType="one:Switch">
+    <Style x:Key="Switch.Android.Style" TargetType="xam:Switch">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="IsThumbShadowEnabled" Value="True"/>
         <Setter Property="EllipseDiameter" Value="40"/>
@@ -27,9 +27,9 @@
         <Setter Property="ThumbUnToggledColor" Value="{StaticResource Gray2}"/>        
     </Style>
 
-    <Style TargetType="one:Switch" BasedOn="{StaticResource Switch.Android.Style}"/>
+    <Style TargetType="xam:Switch" BasedOn="{StaticResource Switch.Android.Style}"/>
 
-    <Style x:Key="Switch.iOS.Style" TargetType="one:Switch">
+    <Style x:Key="Switch.iOS.Style" TargetType="xam:Switch">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="IsThumbShadowEnabled" Value="True"/>
         <Setter Property="IsEllipseAnimationEnabled" Value="False"/>
@@ -44,7 +44,7 @@
         <Setter Property="ThumbUnToggledColor" Value="White"/>
     </Style>
 
-    <Style x:Key="Switch.UWP.Style" TargetType="one:Switch">
+    <Style x:Key="Switch.UWP.Style" TargetType="xam:Switch">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="VisualStyle" Value="UWP"/>
         <Setter Property="IsThumbShadowEnabled" Value="False"/>

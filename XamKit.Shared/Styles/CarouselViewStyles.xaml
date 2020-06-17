@@ -6,7 +6,7 @@
     xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
 
     <!--CarouselView style-->
-    <Style x:Key="CarouselView.DefaultStyle" TargetType="one:CarouselView" >
+    <Style x:Key="CarouselView.DefaultStyle" TargetType="xam:CarouselView" >
         <Setter Property="ItemsLayoutTemplate">
             <DataTemplate>
                 <xam:CarouselLayout/>
@@ -19,6 +19,6 @@
         </Setter>
     </Style>
 
-    <Style TargetType="one:CarouselView" BasedOn="{StaticResource CarouselView.DefaultStyle}"/>
+    <Style TargetType="xam:CarouselView" BasedOn="{StaticResource CarouselView.DefaultStyle}"/>
 
 </ResourceDictionary>

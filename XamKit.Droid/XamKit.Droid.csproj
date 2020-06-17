@@ -53,7 +53,7 @@
     <Compile Include="Controls\EntryRenderer.cs" />
     <Compile Include="Controls\FlyoutMenuRenderer.cs" />
     <Compile Include="Effects\TouchEffect.cs" />
-    <Compile Include="Init.cs" />
+    <Compile Include="Initializer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

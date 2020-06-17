@@ -1,6 +1,6 @@
 ﻿namespace XamKit.Droid
 {
-	public static class OneLib
+	public static class Initializer
     {
 		public static void Init() { }
 	}

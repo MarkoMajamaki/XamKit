@@ -45,7 +45,7 @@
                 IconHorizontalOptions="Center" 
                 IconVerticalOptions="Center"
                 HorizontalOptions="Start"
-                IconAssemblyName="One"
+                IconAssemblyName="XamKit.Shared"
                 IconResourceKey="Icons.close.svg"/>
 
             <xam:GradientView 
@@ -100,7 +100,7 @@
                 IconVerticalOptions="Center"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
-                IconAssemblyName="One"
+                IconAssemblyName="XamKit.Shared"
                 IconResourceKey="Icons.close.svg"/>
 
             <xam:TextBox
@@ -189,8 +189,8 @@
     </DataTemplate>
 
     <!--Default style-->
-    <Style x:Key="DropDown.Android.FilledStyle" TargetType="one:DropDown" BasedOn="{StaticResource TextBox.Android.FilledStyle}">
-        <Setter Property="RightIconAssemblyName" Value="One"/>
+    <Style x:Key="DropDown.Android.FilledStyle" TargetType="xam:DropDown" BasedOn="{StaticResource TextBox.Android.FilledStyle}">
+        <Setter Property="RightIconAssemblyName" Value="XamKit.Shared"/>
         <Setter Property="RightIconResourceKey" Value="Icons.arrow_drop_down.svg"/>
         <Setter Property="RightIconFocusedColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
@@ -204,16 +204,16 @@
         <Setter Property="PopupTemplate" Value="{StaticResource DropDown.PopupTemplate}"/>
         <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Single.SelectedItemTemplate}"/>
         <Style.Triggers>
-            <Trigger Property="SelectionMode" Value="Multiple" TargetType="one:DropDown">
+            <Trigger Property="SelectionMode" Value="Multiple" TargetType="xam:DropDown">
                 <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Multi.SelectedItemTemplate}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="one:DropDown" BasedOn="{StaticResource DropDown.Android.FilledStyle}"/>
+    <Style TargetType="xam:DropDown" BasedOn="{StaticResource DropDown.Android.FilledStyle}"/>
 
-    <Style x:Key="DropDown.Android.OutlinedStyle" TargetType="one:DropDown" BasedOn="{StaticResource TextBox.Android.OutlinedStyle}">
-        <Setter Property="RightIconAssemblyName" Value="One"/>
+    <Style x:Key="DropDown.Android.OutlinedStyle" TargetType="xam:DropDown" BasedOn="{StaticResource TextBox.Android.OutlinedStyle}">
+        <Setter Property="RightIconAssemblyName" Value="XamKit.Shared"/>
         <Setter Property="RightIconResourceKey" Value="Icons.arrow_drop_down.svg"/>
         <Setter Property="RightIconFocusedColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
@@ -227,18 +227,18 @@
         <Setter Property="PopupTemplate" Value="{StaticResource DropDown.PopupTemplate}"/>
         <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Single.SelectedItemTemplate}"/>
         <Style.Triggers>
-            <Trigger Property="SelectionMode" Value="Multiple" TargetType="one:DropDown">
+            <Trigger Property="SelectionMode" Value="Multiple" TargetType="xam:DropDown">
                 <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Multi.SelectedItemTemplate}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <!--Default DropDownItem style-->
-    <Style x:Key="DropDownItem.DefaultStyle" TargetType="one:DropDownItem" BasedOn="{StaticResource MenuButton.MenuStyle}">
+    <Style x:Key="DropDownItem.DefaultStyle" TargetType="xam:DropDownItem" BasedOn="{StaticResource MenuButton.MenuStyle}">
         <!-- CheckBox -->
         <Setter Property="CheckBoxStyle">
             <Setter.Value>
-                <Style TargetType="one:CheckBox" BasedOn="{StaticResource CheckBox.DefaultStyle}">
+                <Style TargetType="xam:CheckBox" BasedOn="{StaticResource CheckBox.DefaultStyle}">
                     <Setter Property="Margin" Value="16,0,0,0"/>
                 </Style>
             </Setter.Value>
@@ -247,9 +247,9 @@
         <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
     </Style>
 
-    <Style TargetType="one:DropDownItem" BasedOn="{StaticResource DropDownItem.DefaultStyle}"/>
+    <Style TargetType="xam:DropDownItem" BasedOn="{StaticResource DropDownItem.DefaultStyle}"/>
 
-    <Style x:Key="DropDownMenuItemsView.DefaultStyle" TargetType="one:DropDownMenuItemsView">
+    <Style x:Key="DropDownMenuItemsView.DefaultStyle" TargetType="xam:DropDownMenuItemsView">
         <Setter Property="ItemsLayoutTemplate">
             <DataTemplate>
                 <!--
@@ -260,6 +260,6 @@
         </Setter>
     </Style>
 
-    <Style TargetType="one:DropDownMenuItemsView" BasedOn="{StaticResource DropDownMenuItemsView.DefaultStyle}"/>
+    <Style TargetType="xam:DropDownMenuItemsView" BasedOn="{StaticResource DropDownMenuItemsView.DefaultStyle}"/>
     
 </ResourceDictionary>

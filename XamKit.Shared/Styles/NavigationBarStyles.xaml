@@ -12,7 +12,7 @@
 
     <x:Int32 x:Key="AnimationDuration">400</x:Int32>
 
-    <Style x:Key="NavigationBar.Android.DefaultStyle" TargetType="one:NavigationBar">
+    <Style x:Key="NavigationBar.Android.DefaultStyle" TargetType="xam:NavigationBar">
         <Setter Property="ShadowHeight" Value="8"/>
         <Setter Property="LineHeight" Value="0"/>
         <Setter Property="Animation" Value="Fade"/>
@@ -48,11 +48,11 @@
                         IconChangeAnimation="Rolling"
                         IconChangeAnimationDuration="{StaticResource AnimationDuration}"
                         IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
-                        BackIconAssemblyName="One"
+                        BackIconAssemblyName="XamKit.Shared"
                         BackIconResourceKey="Icons.navigate_back_android.svg"
-                        MenuIconAssemblyName="One"
+                        MenuIconAssemblyName="XamKit.Shared"
                         MenuIconResourceKey="Icons.menu.svg"
-                        CloseIconAssemblyName="One"
+                        CloseIconAssemblyName="XamKit.Shared"
                         CloseIconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.Black.OutlinedStyle}"
                         AnimationStyle="Default">
@@ -91,7 +91,7 @@
                         IconHorizontalOptions="Center" 
                         IconVerticalOptions="Center"
                         HorizontalOptions="Center"
-                        IconAssemblyName="One"
+                        IconAssemblyName="XamKit.Shared"
                         IconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.Black.OutlinedStyle}"
                         AnimationStyle="Default">
@@ -102,7 +102,7 @@
     </Style>
 
     <!--NavigationBar default style-->
-    <Style x:Key="NavigationBar.iOS.DefaultStyle" TargetType="one:NavigationBar">
+    <Style x:Key="NavigationBar.iOS.DefaultStyle" TargetType="xam:NavigationBar">
         <Setter Property="Animation" Value="SlideHorizontal"/>
         <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
         <Setter Property="AnimationEasing" Value="{x:Static Easing.CubicOut}"/>
@@ -138,11 +138,11 @@
                         IconChangeAnimation="Fade"
                         IconChangeAnimationDuration="{StaticResource AnimationDuration}"
                         IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
-                        BackIconAssemblyName="One"
+                        BackIconAssemblyName="XamKit.Shared"
                         BackIconResourceKey="Icons.navigate_back_ios.svg"
-                        MenuIconAssemblyName="One"
+                        MenuIconAssemblyName="XamKit.Shared"
                         MenuIconResourceKey="Icons.menu.svg"
-                        CloseIconAssemblyName="One"
+                        CloseIconAssemblyName="XamKit.Shared"
                         CloseIconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.TextStyle}"
                         AnimationStyle="Default">
@@ -184,7 +184,7 @@
                         IconVerticalOptions="Center"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        IconAssemblyName="One"
+                        IconAssemblyName="XamKit.Shared"
                         IconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.Black.OutlinedStyle}"
                         AnimationStyle="Default">
@@ -194,9 +194,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}"/>
+    <Style TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}"/>
 
-    <Style x:Key="NavigationBar.UWP.DefaultStyle" TargetType="one:NavigationBar">
+    <Style x:Key="NavigationBar.UWP.DefaultStyle" TargetType="xam:NavigationBar">
         <Setter Property="ShadowHeight" Value="8"/>
         <Setter Property="LineHeight" Value="0"/>
         <Setter Property="Animation" Value="Fade"/>
@@ -231,11 +231,11 @@
                         IconChangeAnimationDuration="{StaticResource AnimationDuration}"
                         IconChangeAnimation="Rolling"
                         IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
-                        BackIconAssemblyName="One"
+                        BackIconAssemblyName="XamKit.Shared"
                         BackIconResourceKey="Icons.navigate_back_android.svg"
-                        MenuIconAssemblyName="One"
+                        MenuIconAssemblyName="XamKit.Shared"
                         MenuIconResourceKey="Icons.menu.svg"
-                        CloseIconAssemblyName="One"
+                        CloseIconAssemblyName="XamKit.Shared"
                         CloseIconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.Black.OutlinedStyle}"
                         AnimationStyle="Default">
@@ -275,7 +275,7 @@
                         IconHorizontalOptions="Center" 
                         IconVerticalOptions="Center"
                         HorizontalOptions="Center"
-                        IconAssemblyName="One"
+                        IconAssemblyName="XamKit.Shared"
                         IconResourceKey="Icons.close.svg"
                         Style="{StaticResource Button.Black.OutlinedStyle}">
                     </xam:Button>
@@ -286,17 +286,17 @@
         
     <!-- MODAL -->
 
-    <Style x:Key="NavigationBar.Android.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.Android.DefaultStyle}">
+    <Style x:Key="NavigationBar.Android.ModalStyle" TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.Android.DefaultStyle}">
         <Setter Property="TitleAlignment" Value="Left"/>
     </Style>
 
     <!--NavigationBar default style-->
-    <Style x:Key="NavigationBar.iOS.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}">
+    <Style x:Key="NavigationBar.iOS.ModalStyle" TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}">
         <Setter Property="HeightRequest" Value="58"/>
         <Setter Property="TopSpacing" Value="0"/>
     </Style>
 
-    <Style x:Key="NavigationBar.UWP.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.UWP.DefaultStyle}">
+    <Style x:Key="NavigationBar.UWP.ModalStyle" TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.UWP.DefaultStyle}">
         <Setter Property="TitleAlignment" Value="Center"/>
     </Style>
 

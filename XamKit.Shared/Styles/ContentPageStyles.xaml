@@ -13,9 +13,9 @@
     <xam:PopAnimationGroup x:Key="PopAnimationGroup"/>
 
     <!--ContentPage style-->
-    <Style x:Key="ContentPage.DefaultStyle" TargetType="one:ContentPage">
-        <Setter Property="one:NavigationBar.LineColor" Value="{StaticResource Gray5}"/>
-        <Setter Property="one:NavigationBar.IsLineVisible">
+    <Style x:Key="ContentPage.DefaultStyle" TargetType="xam:ContentPage">
+        <Setter Property="xam:NavigationBar.LineColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="xam:NavigationBar.IsLineVisible">
             <Setter.Value>
                 <OnPlatform x:TypeArguments="x:Boolean">
                     <On Platform="iOS" Value="True"/>
@@ -23,7 +23,7 @@
                 </OnPlatform>
             </Setter.Value>
         </Setter>
-        <Setter Property="one:NavigationBar.BackgroundColor">
+        <Setter Property="xam:NavigationBar.BackgroundColor">
             <Setter.Value>
                 <OnPlatform x:TypeArguments="Color">
                     <On Platform="iOS" Value="{StaticResource Gray2}"/>
@@ -33,7 +33,7 @@
         </Setter>
         <Setter Property="NavigationAnimationGroup">
             <Setter.Value>
-                <OnPlatform x:TypeArguments="one:NavigationAnimationGroup">
+                <OnPlatform x:TypeArguments="xam:NavigationAnimationGroup">
                     <On Platform="iOS" Value="{StaticResource SlideAnimationGroup}" />
                     <On Platform="UWP, Android" Value="{StaticResource PopAnimationGroup}" />
                 </OnPlatform>
@@ -41,6 +41,6 @@
         </Setter>
     </Style>
     
-    <Style TargetType="one:ContentPage" BasedOn="{StaticResource ContentPage.DefaultStyle}"/>
+    <Style TargetType="xam:ContentPage" BasedOn="{StaticResource ContentPage.DefaultStyle}"/>
 
 </ResourceDictionary>

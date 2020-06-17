@@ -21,7 +21,7 @@
         IsHorizontalResizeEnabled="False">
     </xam:PopupResizeAnimation>
 
-    <Style x:Key="Popup.DefaultStyle" TargetType="one:Popup">
+    <Style x:Key="Popup.DefaultStyle" TargetType="xam:Popup">
         <Setter Property="OpeningAnimation" Value="{StaticResource PopupResizeAnimation}"/>
         <Setter Property="ClosingAnimation" Value="{StaticResource PopupFadeAnimation}"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -34,6 +34,6 @@
         <Setter Property="ShadowLenght" Value="4"/>
     </Style>
 
-    <Style TargetType="one:Popup" BasedOn="{StaticResource Popup.DefaultStyle}"/>
+    <Style TargetType="xam:Popup" BasedOn="{StaticResource Popup.DefaultStyle}"/>
 
 </ResourceDictionary>

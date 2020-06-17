@@ -9,13 +9,13 @@
         <xam:Colors/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="ActivityIndicator.DefaultStyle" TargetType="one:ActivityIndicator">
+    <Style x:Key="ActivityIndicator.DefaultStyle" TargetType="xam:ActivityIndicator">
         <Setter Property="WidthRequest" Value="50"/>
         <Setter Property="HeightRequest" Value="50"/>
         <Setter Property="IndicatorThickness" Value="6"/>
         <Setter Property="IndicatorForeground" Value="{StaticResource PrimaryColor}"/>
     </Style>
 
-    <Style TargetType="one:ActivityIndicator" BasedOn="{StaticResource ActivityIndicator.DefaultStyle}"/>
+    <Style TargetType="xam:ActivityIndicator" BasedOn="{StaticResource ActivityIndicator.DefaultStyle}"/>
 
 </ResourceDictionary>

@@ -10,7 +10,7 @@
         <xam:ButtonStyles/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="ToggleButton.TextStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.TextStyle}">
+    <Style x:Key="ToggleButton.TextStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.TextStyle}">
         <Setter Property="ToggledTextColor" Value="{StaticResource PrimaryColorDark}"/>
         <Setter Property="ToggledExtraTextColor" Value="{StaticResource PrimaryColorDark}"/>
         <Setter Property="ToggledIconColor" Value="{StaticResource PrimaryColorDark}"/>
@@ -28,9 +28,9 @@
         <Setter Property="ToggledBorderPressedColor" Value="Transparent"/>     
     </Style>
 
-    <Style TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.TextStyle}"/>
+    <Style TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.TextStyle}"/>
 
-    <Style x:Key="ToggleButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.OutlinedStyle}">           
+    <Style x:Key="ToggleButton.OutlinedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.OutlinedStyle}">           
         <Setter Property="ToggledTextColor" Value="White"/>
         <Setter Property="ToggledExtraTextColor" Value="White"/>
         <Setter Property="ToggledIconColor" Value="White"/>
@@ -48,7 +48,7 @@
         <Setter Property="ToggledBorderPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>
     </Style>
 
-    <Style x:Key="ToggleButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.ContainedStyle}">
+    <Style x:Key="ToggleButton.ContainedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.ContainedStyle}">
         <Setter Property="ToggledTextColor" Value="White"/>
         <Setter Property="ToggledExtraTextColor" Value="White"/>
         <Setter Property="ToggledIconColor" Value="White"/>
@@ -66,7 +66,7 @@
         <Setter Property="ToggledBorderPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>     
     </Style>
     
-    <Style x:Key="ToggleButton.Black.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+    <Style x:Key="ToggleButton.Black.OutlinedStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
         <Setter Property="ToggledTextColor" Value="Black"/>
         <Setter Property="ToggledExtraTextColor" Value="Black"/>
         <Setter Property="ToggledIconColor" Value="Black"/>
@@ -84,7 +84,7 @@
         <Setter Property="ToggledBorderPressedColor" Value="Black"/>  
     </Style>
 
-    <Style x:Key="ToggleButton.BlackTextStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.BlackTextStyle}">
+    <Style x:Key="ToggleButton.BlackTextStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.BlackTextStyle}">
         <Setter Property="ToggledTextColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="ToggledExtraTextColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="ToggledIconColor" Value="{StaticResource PrimaryColor}"/>
@@ -102,7 +102,7 @@
         <Setter Property="ToggledBorderPressedColor" Value="Transparent"/>
     </Style>
 
-    <Style x:Key="ToggleButton.NavigationBar.BlackStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}">
+    <Style x:Key="ToggleButton.NavigationBar.BlackStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}">
         <Setter Property="ToggledTextColor" Value="Black"/>
         <Setter Property="ToggledExtraTextColor" Value="Black"/>
         <Setter Property="ToggledIconColor" Value="Black"/>
@@ -120,7 +120,7 @@
         <Setter Property="ToggledBorderPressedColor" Value="Black"/>
     </Style>
 
-    <Style x:Key="ToggleButton.MainMenuStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.OutlinedStyle}">
+    <Style x:Key="ToggleButton.MainMenuStyle" TargetType="xam:ToggleButton" BasedOn="{StaticResource ToggleButton.OutlinedStyle}">
         <Setter Property="TextMargin">
             <Setter.Value>
                 <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>

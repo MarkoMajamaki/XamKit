@@ -10,7 +10,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!--TabView style-->
-    <Style x:Key="TabView.DefaultStyle" TargetType="one:TabView">
+    <Style x:Key="TabView.DefaultStyle" TargetType="xam:TabView">
         <Setter Property="ItemsLayoutTemplate">
             <DataTemplate>
                 <xam:CarouselLayout/>
@@ -23,10 +23,10 @@
         </Setter>
     </Style>
 
-    <Style TargetType="one:TabView" BasedOn="{StaticResource TabView.DefaultStyle}"/>
+    <Style TargetType="xam:TabView" BasedOn="{StaticResource TabView.DefaultStyle}"/>
 
     <!--Default tabbar button style-->
-    <Style x:Key="TabItem.HeaderButtonStyle" TargetType="one:ToggleButton">
+    <Style x:Key="TabItem.HeaderButtonStyle" TargetType="xam:ToggleButton">
         <Setter Property="TextMargin" Value="16,0,16,0"/>
         <Setter Property="IconMargin" Value="16,0,16,0"/>
         <Setter Property="IconWidthRequest" Value="24"/>
@@ -68,7 +68,7 @@
 
     <xam:FadeAnimation x:Key="TabItemAnimation" Duration="250" FadeDirection="In" StartOpacity="0"/>
 
-    <Style x:Key="TabItem.DefaultStyle" TargetType="one:TabItem">
+    <Style x:Key="TabItem.DefaultStyle" TargetType="xam:TabItem">
         <Setter Property="ContentAnimation" Value="{StaticResource TabItemAnimation}"/>
         <Setter Property="HeaderTemplate">
             <DataTemplate>
@@ -77,10 +77,10 @@
         </Setter>       
     </Style>
 
-    <Style TargetType="one:TabItem" BasedOn="{StaticResource TabItem.DefaultStyle}"/>
+    <Style TargetType="xam:TabItem" BasedOn="{StaticResource TabItem.DefaultStyle}"/>
 
     <!--TabBar style-->
-    <Style x:Key="TabBar.DefaultStyle" TargetType="one:TabBar">
+    <Style x:Key="TabBar.DefaultStyle" TargetType="xam:TabBar">
         <Setter Property="FocusLineColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="FocusLineHeightRequest" Value="4"/>
         <Setter Property="BottomLineColor" Value="{StaticResource Gray5}"/>
@@ -91,6 +91,6 @@
         <Setter Property="InputTransparent" Value="true"/>
     </Style>
 
-    <Style TargetType="one:TabBar" BasedOn="{StaticResource TabBar.DefaultStyle}"/>
+    <Style TargetType="xam:TabBar" BasedOn="{StaticResource TabBar.DefaultStyle}"/>
 
 </ResourceDictionary>

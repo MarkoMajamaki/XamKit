@@ -130,7 +130,7 @@
     <Compile Include="Effects\ScrollEffect.cs" />
     <Compile Include="Effects\TouchEffect.cs" />
     <Compile Include="Extensions\ColorConverter.cs" />
-    <Compile Include="Init.cs" />
+    <Compile Include="Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\XamKit.UWP.rd.xml" />
   </ItemGroup>

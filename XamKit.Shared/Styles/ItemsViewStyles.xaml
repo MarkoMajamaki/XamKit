@@ -62,7 +62,7 @@
         ScaleHeightStartTime="0.5"
         ScaleHeightEndTime="1"/>
     
-    <Style x:Key="ItemsView.DefaultStyle" TargetType="one:ItemsView">
+    <Style x:Key="ItemsView.DefaultStyle" TargetType="xam:ItemsView">
         <Setter Property="ItemsLayoutTemplate">
             <DataTemplate>
                 <xam:VirtualizingStackLayout/>
@@ -75,9 +75,9 @@
         </Setter>
     </Style>
     
-    <Style TargetType="one:ItemsView" BasedOn="{StaticResource ItemsView.DefaultStyle}"/>
+    <Style TargetType="xam:ItemsView" BasedOn="{StaticResource ItemsView.DefaultStyle}"/>
 
-     <Style x:Key="ItemContainer.DefaultStyle" TargetType="one:ItemContainer">
+     <Style x:Key="ItemContainer.DefaultStyle" TargetType="xam:ItemContainer">
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="SeparatorColor" Value="{StaticResource Gray2}"/>
         <Setter Property="IsSeparatorVisible" Value="True"/>
@@ -89,7 +89,7 @@
         <Setter Property="CheckBoxBorderColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="CheckBoxBorderThickness" Value="1"/>
         <Setter Property="CheckBoxCornerRadius" Value="2"/>
-        <Setter Property="CheckMarkIconAssemblyName" Value="One"/>
+        <Setter Property="CheckMarkIconAssemblyName" Value="XamKit.Shared"/>
         <Setter Property="CheckMarkIconResourceKey" Value="Icons.checkmark.svg"/>
         <Setter Property="CheckMarkIconColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="CheckBoxWidthRequest" Value="20"/>
@@ -114,9 +114,9 @@
         <Setter Property="HorizontalOptions" Value="Fill"/>
     </Style>    
     
-    <Style TargetType="one:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}"/>
+    <Style TargetType="xam:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}"/>
     
-    <Style x:Key="ItemContainer.SimpleStyle" TargetType="one:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}">
+    <Style x:Key="ItemContainer.SimpleStyle" TargetType="xam:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}">
         <!--
         <Setter Property="CheckBoxMargin" Value="20,0,10,0"/>
         -->

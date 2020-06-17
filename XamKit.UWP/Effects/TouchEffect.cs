@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
-[assembly: ResolutionGroupName("One")]
+[assembly: ResolutionGroupName("XamKit")]
 [assembly: ExportEffect(typeof(XamKit.UWP.TouchEffect), "TouchEffect")]
 
 namespace XamKit.UWP
