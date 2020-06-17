@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.DropDownStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:TextBoxStyles/>
+        <xam:PopupStyles/>
+        <xam:MenuButtonStyles/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="DropDown.DefaultItemTmplate">
+        <xam:DropDownItem Text="{Binding}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DropDown.UWP.FullScreenPopupTemplate">
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label 
+                Text="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
+                FontSize="16"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+
+            <xam:Button
+                x:Name="PART_CloseButton"
+                Style="{StaticResource Button.Black.OutlinedStyle}"
+                HeightRequest="32" 
+                WidthRequest="32" 
+                BorderThickness="0"
+                CornerRadius="40"
+                IconWidthRequest="24"                        
+                IconHeightRequest="24"
+                IconMargin="0"
+                Margin="4,4,20,4"
+                IconHorizontalOptions="Center" 
+                IconVerticalOptions="Center"
+                HorizontalOptions="Start"
+                IconAssemblyName="One"
+                IconResourceKey="Icons.close.svg"/>
+
+            <xam:GradientView 
+                Grid.Row="1"
+                Horizontal="false" 
+                StartColor="Black" 
+                Opacity="0.1" 
+                HeightRequest="8"                 
+                VerticalOptions="Start"/>
+
+            <xam:TextBox
+                Grid.Row="1"
+                Style="{StaticResource TextBox.Android.OutlinedStyle}" 
+                Placeholder="Search" 
+                TextPadding="0"
+                Margin="12"/>
+
+            <ScrollView Grid.Row="2">
+                <xam:DropDownMenuItemsView x:Name="PART_ItemsView"/>
+            </ScrollView>       
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DropDown.Android.FullScreenPopupTemplate">
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label 
+                x:Name="PART_CaptionLabel"
+                Text="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
+                FontFamily="Roboto" 
+                TextColor="Black"                
+                FontSize="20"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+
+            <xam:Button
+                x:Name="PART_CloseButton"
+                Style="{StaticResource Button.Black.OutlinedStyle}"
+                HeightRequest="40" 
+                WidthRequest="40" 
+                BorderThickness="0"
+                CornerRadius="20"
+                IconWidthRequest="24"                        
+                IconHeightRequest="24"
+                IconMargin="0"
+                Margin="8,0,24,0"
+                IconHorizontalOptions="Center" 
+                IconVerticalOptions="Center"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                IconAssemblyName="One"
+                IconResourceKey="Icons.close.svg"/>
+
+            <xam:TextBox
+                x:Name="PART_SearchBox"
+                Placeholder="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Placeholder}"
+                VerticalOptions="Center"
+                IsLineVisible="False"
+                BorderThickness="0"
+                CornerRadius="0"
+                FontSize="20"
+                TextPadding="0,12"
+                Margin="72,0,0,0"/>
+
+            <xam:GradientView 
+                Grid.Row="1"
+                Horizontal="false" 
+                StartColor="Black" 
+                Opacity="0.1" 
+                HeightRequest="8"                 
+                VerticalOptions="Start"/>
+
+            <ScrollView Grid.Row="1">
+                <xam:DropDownMenuItemsView x:Name="PART_ItemsView"/>
+            </ScrollView>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DropDown.PopupTemplate">
+        <xam:DropDownMenuItemsView x:Name="PART_ItemsView"/>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="DropDown.Multi.SelectedItemTemplate">
+        <xam:Border 
+            CornerRadius="16" 
+            BorderThickness="1" 
+            BorderColor="Gray">
+            <Label 
+                Margin="12,4"
+                VerticalOptions="Center"
+                Text="{Binding}"
+                TextColor="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=TextColor}"
+                FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+        </xam:Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DropDown.Single.SelectedItemTemplate">
+        <Label 
+            Text="{Binding}"
+            LineBreakMode="TailTruncation"
+            TextColor="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=TextColor}"
+            FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}">
+            <!-- Margin fixes -->
+            <Label.Triggers>
+                <MultiTrigger TargetType="Label">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=CaptionPlacement}" Value="Inside"/>
+                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=SelectionMode}" Value="Single"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Margin" Value="0,-12,0,0"/>
+                </MultiTrigger>
+            </Label.Triggers>
+        </Label>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="DropDown.SelectedItemCountIndicatorTemplate">
+        <xam:Border 
+            CornerRadius="16"
+            BorderThickness="1"
+            BackgroundColor="{StaticResource PrimaryColorDark}">
+            <StackLayout 
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                Spacing="0" 
+                Margin="12,4">
+                <Label 
+                    Text="+"
+                    TextColor="White"
+                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+                <Label 
+                    Text="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=HiddenSelectedItemsCount, Mode=OneWay}"
+                    TextColor="White"
+                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+            </StackLayout>
+        </xam:Border>
+    </DataTemplate>
+
+    <!--Default style-->
+    <Style x:Key="DropDown.Android.FilledStyle" TargetType="one:DropDown" BasedOn="{StaticResource TextBox.Android.FilledStyle}">
+        <Setter Property="RightIconAssemblyName" Value="One"/>
+        <Setter Property="RightIconResourceKey" Value="Icons.arrow_drop_down.svg"/>
+        <Setter Property="RightIconFocusedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="PopupSpacing" Value="0"/>
+        <Setter Property="SelectedItemsSpacing" Value="8"/>
+        <Setter Property="SearchMode" Value="None"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="SelectedItemsCountTemplate" Value="{StaticResource DropDown.SelectedItemCountIndicatorTemplate}"/>
+        <Setter Property="ItemTemplate" Value="{StaticResource DropDown.DefaultItemTmplate}"/>
+        <Setter Property="FullScreenPopupTemplate" Value="{StaticResource DropDown.Android.FullScreenPopupTemplate}"/>
+        <Setter Property="PopupTemplate" Value="{StaticResource DropDown.PopupTemplate}"/>
+        <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Single.SelectedItemTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="SelectionMode" Value="Multiple" TargetType="one:DropDown">
+                <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Multi.SelectedItemTemplate}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="one:DropDown" BasedOn="{StaticResource DropDown.Android.FilledStyle}"/>
+
+    <Style x:Key="DropDown.Android.OutlinedStyle" TargetType="one:DropDown" BasedOn="{StaticResource TextBox.Android.OutlinedStyle}">
+        <Setter Property="RightIconAssemblyName" Value="One"/>
+        <Setter Property="RightIconResourceKey" Value="Icons.arrow_drop_down.svg"/>
+        <Setter Property="RightIconFocusedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="PopupSpacing" Value="0"/>
+        <Setter Property="SelectedItemsSpacing" Value="8"/>
+        <Setter Property="SearchMode" Value="None"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="SelectedItemsCountTemplate" Value="{StaticResource DropDown.SelectedItemCountIndicatorTemplate}"/>
+        <Setter Property="ItemTemplate" Value="{StaticResource DropDown.DefaultItemTmplate}"/>
+        <Setter Property="FullScreenPopupTemplate" Value="{StaticResource DropDown.Android.FullScreenPopupTemplate}"/>
+        <Setter Property="PopupTemplate" Value="{StaticResource DropDown.PopupTemplate}"/>
+        <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Single.SelectedItemTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="SelectionMode" Value="Multiple" TargetType="one:DropDown">
+                <Setter Property="SelectedItemTemplate" Value="{StaticResource DropDown.Multi.SelectedItemTemplate}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Default DropDownItem style-->
+    <Style x:Key="DropDownItem.DefaultStyle" TargetType="one:DropDownItem" BasedOn="{StaticResource MenuButton.MenuStyle}">
+        <!-- CheckBox -->
+        <Setter Property="CheckBoxStyle">
+            <Setter.Value>
+                <Style TargetType="one:CheckBox" BasedOn="{StaticResource CheckBox.DefaultStyle}">
+                    <Setter Property="Margin" Value="16,0,0,0"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="one:DropDownItem" BasedOn="{StaticResource DropDownItem.DefaultStyle}"/>
+
+    <Style x:Key="DropDownMenuItemsView.DefaultStyle" TargetType="one:DropDownMenuItemsView">
+        <Setter Property="ItemsLayoutTemplate">
+            <DataTemplate>
+                <!--
+                <StackLayout Spacing="0"/>
+                -->
+                <xam:VirtualizingStackLayout/>
+            </DataTemplate>
+        </Setter>
+    </Style>
+
+    <Style TargetType="one:DropDownMenuItemsView" BasedOn="{StaticResource DropDownMenuItemsView.DefaultStyle}"/>
+    
+</ResourceDictionary>

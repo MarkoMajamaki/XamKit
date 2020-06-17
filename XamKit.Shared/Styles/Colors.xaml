@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.Colors">    
+    
+    <!--
+    https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=0074e8&secondary.color=D9017A
+    -->
+    
+    <!-- Gray scale-->
+    <Color x:Key="Gray1">#FFFAFAFA</Color>
+    <Color x:Key="Gray2">#FFF5F5F5</Color>
+    <Color x:Key="Gray3">#FFEEEEEE</Color>
+    <Color x:Key="Gray4">#FFE0E0E0</Color>
+    <Color x:Key="Gray5">#FFBDBDBD</Color>
+    <Color x:Key="Gray6">#FF9E9E9E</Color>
+    <Color x:Key="Gray7">#FF757575</Color>
+    <Color x:Key="Gray8">#FF616161</Color>
+    <Color x:Key="Gray9">#FF424242</Color>
+    <Color x:Key="Gray10">#FF212121</Color>
+
+    <!-- Primary color scale-->
+    <Color x:Key="PrimaryColorLight">#FF63a2ff</Color>
+    <Color x:Key="PrimaryColor">#FF0074e8</Color>
+    <Color x:Key="PrimaryColorDark">#FF004ab5</Color>
+
+    <!-- Secondary color scale-->
+    <Color x:Key="SecondaryColorLight">#FFff55a9</Color>
+    <Color x:Key="SecondaryColor">#FFd9017a</Color>
+    <Color x:Key="SecondaryColorDark">#FFa2004e</Color>
+    
+</ResourceDictionary>

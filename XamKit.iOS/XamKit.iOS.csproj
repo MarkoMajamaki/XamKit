@@ -40,6 +40,15 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BorderRenderer.cs" />
+    <Compile Include="Controls\CarouselLayoutRenderer.cs" />
+    <Compile Include="Controls\EditorRenderer.cs" />
+    <Compile Include="Controls\EntryRenderer.cs" />
+    <Compile Include="Controls\FlyoutMenuRenderer.cs" />
+    <Compile Include="Controls\RootPageRenderer.cs" />
+    <Compile Include="Effects\TouchEffect.cs" />
+    <Compile Include="Gestures\UIPressedGestureRecognizer.cs" />
+    <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +56,11 @@
       <Project>{1812c406-72f3-48ae-b0c6-b576c4427bfd}</Project>
       <Name>XamKit.Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.967</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.ContentPageStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <xam:SlideAnimationGroup x:Key="SlideAnimationGroup"/>
+    <xam:PopAnimationGroup x:Key="PopAnimationGroup"/>
+
+    <!--ContentPage style-->
+    <Style x:Key="ContentPage.DefaultStyle" TargetType="one:ContentPage">
+        <Setter Property="one:NavigationBar.LineColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="one:NavigationBar.IsLineVisible">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="iOS" Value="True"/>
+                    <On Platform="UWP, Android" Value="False"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="one:NavigationBar.BackgroundColor">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="{StaticResource Gray2}"/>
+                    <On Platform="UWP, Android" Value="White"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="NavigationAnimationGroup">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="one:NavigationAnimationGroup">
+                    <On Platform="iOS" Value="{StaticResource SlideAnimationGroup}" />
+                    <On Platform="UWP, Android" Value="{StaticResource PopAnimationGroup}" />
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="one:ContentPage" BasedOn="{StaticResource ContentPage.DefaultStyle}"/>
+
+</ResourceDictionary>

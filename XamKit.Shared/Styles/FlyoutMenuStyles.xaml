@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.FlyoutMenuStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:ButtonStyles/>
+        <xam:ToggleButtonStyles/>
+        <xam:NavigationPageStyles/>
+    </ResourceDictionary.MergedDictionaries>
+   
+    <!--FlyoutMenu main menu button style for dark background-->
+    <Style x:Key="FlyoutMenu.MainMenuButtonStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="WidthRequest" Value="40"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="40"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="IconMargin" Value="0"/>
+        <Setter Property="Margin" Value="8"/>
+        <Setter Property="IconResourceKey" Value="Icons.menu.svg"/>
+        <Setter Property="IconAssemblyName" Value="One"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="IconWidthRequest" Value="24"/>         
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="AnimationStyle" Value="Default"/>
+    </Style>
+
+    <!--FlyoutMenu main menu button style for dark background-->
+    <Style x:Key="FlyoutMenu.UWP.MainMenuButtonStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+        <Setter Property="HeightRequest" Value="32"/>
+        <Setter Property="WidthRequest" Value="32"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="48"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="IconMargin" Value="0"/>
+        <Setter Property="Margin" Value="8,4"/>
+        <Setter Property="IconResourceKey" Value="Icons.menu.svg"/>
+        <Setter Property="IconAssemblyName" Value="One"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="AnimationStyle" Value="Default"/>
+    </Style>
+
+    <DataTemplate x:Key="FlyoutMenuButtonTemplate">
+        <xam:ToggleButton>
+            <xam:ToggleButton.Style>
+                <OnPlatform x:TypeArguments="Style">
+                    <On Platform="Default" Value="{StaticResource FlyoutMenu.MainMenuButtonStyle}"/>
+                    <On Platform="UWP" Value="{StaticResource FlyoutMenu.UWP.MainMenuButtonStyle}"/>
+                </OnPlatform>
+            </xam:ToggleButton.Style>
+        </xam:ToggleButton>
+    </DataTemplate>
+              
+    <!--FlyoutMenu style-->
+    <Style x:Key="FlyoutMenu.TabletStyle" TargetType="one:FlyoutMenu">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="MainMenuOpeningDuration" Value="400"/>
+        <Setter Property="MainMenuClosingDuration" Value="400"/>
+        <Setter Property="SubMenuOpeningDuration" Value="400"/>
+        <Setter Property="SubMenuClosingDuration" Value="400"/>
+        <Setter Property="MenuLocation" Value="Left"/>
+        <Setter Property="MainMenuMinimalizedWidth" Value="48"/>
+        <Setter Property="MainMenuWidth" Value="230"/>
+        <Setter Property="SubMenuWidth" Value="300"/>
+        <Setter Property="IsSubMenuOpen" Value="False"/>
+        <Setter Property="IsMainMenuOpen" Value="False"/>
+        <Setter Property="ContentBehavior" Value="Move"/>
+        <Setter Property="MenuButtonLocation" Value="TopLeft"/>
+        <Setter Property="MainMenuCloseMode" Value="Closed"/>
+        <Setter Property="MainMenuOpenMode" Value="Open"/>
+        <Setter Property="SubMenuOpenMode" Value="Open"/>
+        <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
+    </Style>
+
+    <Style x:Key="FlyoutMenu.PhoneStyle" TargetType="one:FlyoutMenu">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="MainMenuOpeningDuration" Value="400"/>
+        <Setter Property="MainMenuClosingDuration" Value="400"/>
+        <Setter Property="SubMenuOpeningDuration" Value="400"/>
+        <Setter Property="SubMenuClosingDuration" Value="400"/>
+        <Setter Property="MenuLocation" Value="Left"/>
+        <Setter Property="MainMenuWidth" Value="-1"/>
+        <Setter Property="SubMenuWidth" Value="-1"/>
+        <Setter Property="MainMenuSpacing" Value="56"/>
+        <Setter Property="IsSubMenuOpen" Value="False"/>
+        <Setter Property="IsMainMenuOpen" Value="False"/>
+        <Setter Property="ContentBehavior" Value="Move"/>
+        <Setter Property="MenuButtonLocation" Value="None"/>
+        <Setter Property="MainMenuCloseMode" Value="Closed"/>
+        <Setter Property="MainMenuOpenMode" Value="Open"/>
+        <Setter Property="SubMenuOpenMode" Value="Floating"/>
+        <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
+    </Style>
+
+    <Style x:Key="FlyoutMenu.DesktopStyle" TargetType="one:FlyoutMenu">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="MainMenuOpeningDuration" Value="250"/>
+        <Setter Property="MainMenuClosingDuration" Value="250"/>
+        <Setter Property="SubMenuOpeningDuration" Value="250"/>
+        <Setter Property="SubMenuClosingDuration" Value="250"/>
+        <Setter Property="MenuLocation" Value="Left"/>
+        <Setter Property="MenuButtonLocation" Value="TopLeft"/>
+        <Setter Property="MainMenuMinimalizedWidth" Value="48"/>
+        <Setter Property="MainMenuWidth" Value="230"/>
+        <Setter Property="SubMenuWidth" Value="300"/>
+        <Setter Property="IsSubMenuOpen" Value="False"/>
+        <Setter Property="IsMainMenuOpen" Value="True"/>
+        <Setter Property="ContentBehavior" Value="Resize"/>
+        <Setter Property="MenuButtonLocation" Value="TopLeft"/>
+        <Setter Property="MainMenuCloseMode" Value="Minimalized"/>
+        <Setter Property="MainMenuOpenMode" Value="Open"/>
+        <Setter Property="SubMenuOpenMode" Value="Floating"/>
+        <Setter Property="MenuButtonTemplate" Value="{StaticResource FlyoutMenuButtonTemplate}"/>
+    </Style>
+
+    <Style TargetType="one:FlyoutMenu" BasedOn="{StaticResource FlyoutMenu.PhoneStyle}"/>
+
+</ResourceDictionary>

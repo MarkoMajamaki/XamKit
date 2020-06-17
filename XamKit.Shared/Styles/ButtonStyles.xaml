@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.ButtonStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+   </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Button.TextStyle" TargetType="one:Button">
+        <Setter Property="TextMargin">
+            <OnPlatform Android="8,11" iOS="8,10" Default="8,11"/>
+        </Setter>
+        <Setter Property="TextFontWeight">
+            <OnPlatform Android="Bold" iOS="Normal" Default="SemiBold"/>
+        </Setter>
+        <Setter Property="ExtraTextFontWeight">
+            <OnPlatform Android="Bold" iOS="Normal" Default="SemiBold"/>
+        </Setter>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="ExtraTextFontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="IconMargin" Value="12,0,-8,0"/>
+        <Setter Property="IconWidthRequest" Value="18"/>
+        <Setter Property="IconHeightRequest" Value="18"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="TextAlignment" Value="Center"/>        
+        <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ExtraTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="TextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="BackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="AnimationStyle" Value="Default"/>
+        <Setter Property="BackgroundPressedColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}"/>
+    
+    <Style x:Key="Button.OutlinedStyle" TargetType="one:Button">
+        <Setter Property="TextMargin">
+            <OnPlatform Android="16,10" iOS="16,10" Default="16,10"/>
+        </Setter>
+        <Setter Property="IconMargin" Value="12,0,-8,0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="ExtraTextFontSize" Value="14"/>
+        <Setter Property="TextFontWeight">
+            <OnPlatform Android="SemiBold" iOS="Normal" Default="SemiBold"/>
+        </Setter>
+        <Setter Property="IconWidthRequest" Value="18"/>
+        <Setter Property="IconHeightRequest" Value="18"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="AnimationStyle" Value="Ellipse"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ExtraTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BackgroundHoverColor" Value="{one:Color Source={StaticResource PrimaryColor}, Lightness=0.9}"/>
+        <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BorderPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BackgroundPressedColor" Value="{one:Color Source={StaticResource PrimaryColor}, Lightness=0.75}"/>
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundDisabledColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="Button.ContainedStyle" TargetType="one:Button">
+        <Setter Property="TextMargin">
+            <OnPlatform Android="16,10" iOS="16,10" Default="16,10"/>
+        </Setter>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextFontWeight">
+            <OnPlatform Android="SemiBold" iOS="Normal" Default="SemiBold"/>
+        </Setter>
+        <Setter Property="IconMargin" Value="12,9,-8,9"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="IconWidthRequest" Value="18"/>
+        <Setter Property="IconHeightRequest" Value="18"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="AnimationStyle" Value="Ellipse"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="ExtraTextColor" Value="White"/>
+        <Setter Property="IconColor" Value="White"/>
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="TextHoverColor" Value="White"/>
+        <Setter Property="ExtraTextHoverColor" Value="White"/>
+        <Setter Property="IconHoverColor" Value="White"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="TextPressedColor" Value="White"/>
+        <Setter Property="ExtraTextPressedColor" Value="White"/>
+        <Setter Property="IconPressedColor" Value="White"/>
+        <Setter Property="BorderPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundDisabledColor" Value="{StaticResource Gray4}"/>
+    </Style>
+
+    <!--Default MenuItem style-->
+    <Style x:Key="Button.MenuStyle" TargetType="one:Button">
+        <Setter Property="TextMargin">
+            <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>
+        </Setter>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="IconWidthRequest" Value="18"/>
+        <Setter Property="IconHeightRequest" Value="18"/>
+        <Setter Property="IconMargin" Value="12,9,-8,9"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="ExtraTextFontSize" Value="14"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="WidthRequest" Value="-1"/>
+        <Setter Property="HeightRequest" Value="-1"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>  
+        <Setter Property="AnimationStyle" Value="Ellipse"/>
+        <Setter Property="ContentHorizontalOptions" Value="Start"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="ExtraTextColor" Value="Black"/>
+        <Setter Property="IconColor" Value="Black"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="Black"/>
+        <Setter Property="ExtraTextHoverColor" Value="Black"/>
+        <Setter Property="IconHoverColor" Value="Black"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="TextPressedColor" Value="Black"/>
+        <Setter Property="ExtraTextPressedColor" Value="Black"/>
+        <Setter Property="IconPressedColor" Value="Black"/>
+        <Setter Property="BorderPressedColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="Transparent"/>
+        <Setter Property="BackgroundDisabledColor" Value="Transparent"/>                
+    </Style>
+
+    <Style x:Key="Button.Black.OutlinedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="ExtraTextColor" Value="Black"/>
+        <Setter Property="IconColor" Value="Black"/>
+        <Setter Property="BorderColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="Black"/>
+        <Setter Property="ExtraTextHoverColor" Value="Black"/>
+        <Setter Property="IconHoverColor" Value="Black"/>
+        <Setter Property="BorderHoverColor" Value="Black"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="TextPressedColor" Value="Black"/>
+        <Setter Property="ExtraTextPressedColor" Value="Black"/>
+        <Setter Property="IconPressedColor" Value="Black"/>
+        <Setter Property="BorderPressedColor" Value="Black"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray5}"/> 
+    </Style>
+
+     <Style x:Key="Button.Black.ContainedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="ExtraTextColor" Value="Black"/>
+        <Setter Property="IconColor" Value="Black"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextHoverColor" Value="Black"/>
+        <Setter Property="ExtraTextHoverColor" Value="Black"/>
+        <Setter Property="IconHoverColor" Value="Black"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="TextPressedColor" Value="Black"/>
+        <Setter Property="ExtraTextPressedColor" Value="Black"/>
+        <Setter Property="IconPressedColor" Value="Black"/>
+        <Setter Property="BorderPressedColor" Value="Black"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="Button.BlackTextStyle" TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="ExtraTextColor" Value="Black"/>
+        <Setter Property="IconColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="IconHoverColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="BorderHoverColor" Value="Transparent"/>
+        <Setter Property="BackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="BackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="BorderPressedColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="Button.NavigationBar.BlackStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+        <Setter Property="IconPlacement" Value="Top"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="ContentVerticalOptions" Value="Center"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="TextMargin" Value="4,8,4,0"/>
+        <Setter Property="Margin">
+            <Setter.Value>
+                <OnPlatform iOS="0,4" Android="0,4" Default="0,4"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius">
+            <Setter.Value>
+                <OnPlatform iOS="40" Android="40" Default="40"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IconMargin">
+            <Setter.Value>
+                <OnPlatform iOS="12" Android="12" Default="4"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Button.MainMenuStyle" TargetType="one:Button" BasedOn="{StaticResource Button.OutlinedStyle}">
+        <Setter Property="TextMargin">
+            <Setter.Value>
+                <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinHeightRequest">
+            <Setter.Value>
+                <OnIdiom x:TypeArguments="x:Double" Phone="50" Tablet="50" Desktop="40"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="ContentHorizontalOptions" Value="Fill"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="IconMargin" Value="12,9,-4,9"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="ExtraTextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="IconColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="IconHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="BorderPressedColor" Value="Transparent"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray4}"/>        
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundDisabledColor" Value="Transparent"/>
+    </Style>
+
+</ResourceDictionary>

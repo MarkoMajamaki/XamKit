@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.PopupStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <xam:PopupSlideAndFadeAnimation 
+        x:Key="PopupFadeAnimation"
+        SlideStartOffset="0"
+        OpacityInit="1"
+        OpacityStart="1"
+        OpacityEnd="0"/>
+
+    <xam:PopupResizeAnimation
+        x:Key="PopupResizeAnimation"
+        IsHorizontalResizeEnabled="False">
+    </xam:PopupResizeAnimation>
+
+    <Style x:Key="Popup.DefaultStyle" TargetType="one:Popup">
+        <Setter Property="OpeningAnimation" Value="{StaticResource PopupResizeAnimation}"/>
+        <Setter Property="ClosingAnimation" Value="{StaticResource PopupFadeAnimation}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="IsShadowEnabled" Value="True"/>
+        <Setter Property="ShadowColor" Value="Black"/>
+        <Setter Property="ShadowOpacity" Value="0.2"/>
+        <Setter Property="ShadowLenght" Value="4"/>
+    </Style>
+
+    <Style TargetType="one:Popup" BasedOn="{StaticResource Popup.DefaultStyle}"/>
+
+</ResourceDictionary>

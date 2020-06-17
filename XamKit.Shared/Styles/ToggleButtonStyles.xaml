@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.ToggleButtonStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:ButtonStyles/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ToggleButton.TextStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.TextStyle}">
+        <Setter Property="ToggledTextColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledExtraTextColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledIconColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="ToggledTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledIconHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderHoverColor" Value="Transparent"/>
+        <Setter Property="ToggledTextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledIconPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Transparent"/>     
+    </Style>
+
+    <Style TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.TextStyle}"/>
+
+    <Style x:Key="ToggleButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.OutlinedStyle}">           
+        <Setter Property="ToggledTextColor" Value="White"/>
+        <Setter Property="ToggledExtraTextColor" Value="White"/>
+        <Setter Property="ToggledIconColor" Value="White"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledBorderColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledTextHoverColor" Value="White"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="White"/>
+        <Setter Property="ToggledIconHoverColor" Value="White"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Lightness=0.25}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Lightness=0.25}"/>
+        <Setter Property="ToggledTextPressedColor" Value="White"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="White"/>
+        <Setter Property="ToggledIconPressedColor" Value="White"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>
+    </Style>
+
+    <Style x:Key="ToggleButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.ContainedStyle}">
+        <Setter Property="ToggledTextColor" Value="White"/>
+        <Setter Property="ToggledExtraTextColor" Value="White"/>
+        <Setter Property="ToggledIconColor" Value="White"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledBorderColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledTextHoverColor" Value="White"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="White"/>
+        <Setter Property="ToggledIconHoverColor" Value="White"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Lightness=0.25}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Lightness=0.25}"/>
+        <Setter Property="ToggledTextPressedColor" Value="White"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="White"/>
+        <Setter Property="ToggledIconPressedColor" Value="White"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="{one:Color Source={StaticResource PrimaryColorDark}, Darkness=0.1}"/>     
+    </Style>
+    
+    <Style x:Key="ToggleButton.Black.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextColor" Value="Black"/>
+        <Setter Property="ToggledIconColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledBorderColor" Value="Black"/>
+        <Setter Property="ToggledTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledIconHoverColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="Black"/>
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Black"/>  
+    </Style>
+
+    <Style x:Key="ToggleButton.BlackTextStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.BlackTextStyle}">
+        <Setter Property="ToggledTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledExtraTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledIconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="ToggledTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledIconHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="Transparent"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="ToggledTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledIconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="ToggleButton.NavigationBar.BlackStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}">
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextColor" Value="Black"/>
+        <Setter Property="ToggledIconColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledBorderColor" Value="Black"/>
+        <Setter Property="ToggledTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledIconHoverColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="Black"/>
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Black"/>
+    </Style>
+
+    <Style x:Key="ToggleButton.MainMenuStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.OutlinedStyle}">
+        <Setter Property="TextMargin">
+            <Setter.Value>
+                <OnPlatform Android="16,17" iOS="16,17" Default="16,11"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinHeightRequest">
+            <Setter.Value>
+                <OnIdiom x:TypeArguments="x:Double" Phone="50" Tablet="50" Desktop="40"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="ContentHorizontalOptions" Value="Fill"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="IconMargin" Value="12,9,-4,9"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="ExtraTextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="IconColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="ExtraTextHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="IconHoverColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="BorderHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="BackgroundHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="BorderPressedColor" Value="Transparent"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledExtraTextColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledIconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>
+        <Setter Property="ToggledTextHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledIconHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="ToggledBorderHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="ToggledTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledIconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Transparent"/>
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="BackgroundDisabledColor" Value="Transparent"/>
+    </Style>
+    
+</ResourceDictionary>

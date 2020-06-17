@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.TypographyStyles">
+    
+    <!-- Android -->
+    
+    <Style x:Key="Label.Android.H1" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Light"/>        
+        <Setter Property="FontSize" Value="96"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.H2" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Light"/>
+        <Setter Property="FontSize" Value="60"/>
+    </Style>
+
+    <Style x:Key="Label.Android.H3" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="48"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.H4" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="34"/>
+    </Style>
+   
+    <Style x:Key="Label.Android.H5" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="24"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.H6" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Medium"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.Subtitle1" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.Subtitle2" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Medium"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.Body1" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    
+    <Style x:Key="Label.Android.Body2" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="Label.Android.Button" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Medium"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="Label.Android.Caption" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style x:Key="Label.Android.Overline" TargetType="Label">
+        <Setter Property="Font" Value="Roboto-Regular"/>
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+    
+    <!-- iOS -->
+    <!--
+    <Style x:Key="Label.iOS.LargeTitle" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="34"/>
+    </Style>
+
+    <Style x:Key="Label.iOS.Title1" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="28"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Title2" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="22"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Title3" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="Label.iOS.Headline" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, SemiBold"/>
+        <Setter Property="FontSize" Value="17"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Body" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="17"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Callout" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Subhead" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style x:Key="Label.iOS.Footnote" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style x:Key="Label.iOS.Caption1" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    
+    <Style x:Key="Label.iOS.Caption2" TargetType="Label">
+        <Setter Property="Font" Value="San Francisco, Regular"/>
+        <Setter Property="FontSize" Value="11"/>
+    </Style>
+    -->
+</ResourceDictionary>

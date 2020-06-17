@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.MenuButtonStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:ToggleButtonStyles/>
+        <xam:CheckBoxStyles/>
+        <xam:PopupStyles/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Popup.MenuButtonStyle" TargetType="one:Popup" BasedOn="{StaticResource Popup.DefaultStyle}">
+        <Setter Property="HasModalBackground" Value="False"/>
+    </Style>
+
+    <Style x:Key="MenuButton.TextStyle" TargetType="one:MenuButton" BasedOn="{StaticResource ToggleButton.TextStyle}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="IsCheckBoxVisible" Value="false"/>
+        <!--Popup-->
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.MenuButtonStyle}"/>
+        <!--SubMenuIcon-->
+        <Setter Property="SubMenuIconAssemblyName" Value="One"/>
+        <Setter Property="SubMenuIconResourceKey" Value="Icons.arrow_down_small.svg"/>
+        <Setter Property="SubMenuIconMargin" Value="-8,0,16,0"/>
+        <Setter Property="SubMenuIconWidthRequest" Value="18"/>
+        <Setter Property="SubMenuIconHeightRequest" Value="18"/>
+        <!--SubmenuIcon colors-->
+        <Setter Property="SubMenuIconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="SubMenuIconHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="SubMenuIconPressedColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="SubMenuIconDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledSubMenuIconColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledSubMenuIconHoverColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledSubMenuIconPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledSubMenuIconDisabledColor" Value="{StaticResource Gray4}"/>
+    </Style>
+
+    <Style x:Key="MenuButton.OutlinedStyle" TargetType="one:MenuButton" BasedOn="{StaticResource ToggleButton.OutlinedStyle}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="IsCheckBoxVisible" Value="false"/>
+        <!--Popup-->
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.MenuButtonStyle}"/>
+        <!--SubMenuIcon-->
+        <Setter Property="SubMenuIconAssemblyName" Value="One"/>
+        <Setter Property="SubMenuIconResourceKey" Value="Icons.arrow_down_small.svg"/>
+        <Setter Property="SubMenuIconMargin" Value="-8,0,16,0"/>
+        <Setter Property="SubMenuIconWidthRequest" Value="18"/>
+        <Setter Property="SubMenuIconHeightRequest" Value="18"/>
+        <!--SubmenuIcon colors-->
+        <Setter Property="SubMenuIconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="SubMenuIconHoverColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="SubMenuIconPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="SubMenuIconDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledSubMenuIconColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconHoverColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconPressedColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconDisabledColor" Value="{StaticResource Gray4}"/>
+
+    </Style>
+
+    <Style x:Key="MenuButton.ContainedStyle" TargetType="one:MenuButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="IsCheckBoxVisible" Value="false"/>
+        <!--Popup-->
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.MenuButtonStyle}"/>
+        <!--SubMenuIcon-->
+        <Setter Property="SubMenuIconAssemblyName" Value="One"/>
+        <Setter Property="SubMenuIconResourceKey" Value="Icons.arrow_down_small.svg"/>
+        <Setter Property="SubMenuIconColor" Value="White"/>
+        <Setter Property="SubMenuIconMargin" Value="-8,0,16,0"/>
+        <Setter Property="SubMenuIconWidthRequest" Value="18"/>
+        <Setter Property="SubMenuIconHeightRequest" Value="18"/>
+        <!--SubmenuIcon colors-->
+        <Setter Property="SubMenuIconColor" Value="White"/>
+        <Setter Property="SubMenuIconHoverColor" Value="White"/>
+        <Setter Property="SubMenuIconPressedColor" Value="White"/>
+        <Setter Property="SubMenuIconDisabledColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconHoverColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconPressedColor" Value="White"/>
+        <Setter Property="ToggledSubMenuIconDisabledColor" Value="White"/>
+
+    </Style>
+
+    <Style x:Key="MenuButton.NavigationBar.BlackStyle" TargetType="one:MenuButton" BasedOn="{StaticResource ToggleButton.NavigationBar.BlackStyle}">
+        <Setter Property="IconAssemblyName" Value="One"/>
+        <Setter Property="IconResourceKey" Value="Icons.dots.svg"/>
+        <Setter Property="SubMenuIconAssemblyName" Value="{x:Null}"/>
+        <Setter Property="SubMenuIconResourceKey" Value="{x:Null}"/>
+        <Setter Property="PopupPlacement" Value="BottomRight"/>
+        <!--SubmenuIcon colors-->
+        <Setter Property="SubMenuIconColor" Value="Black"/>
+        <Setter Property="SubMenuIconHoverColor" Value="Black"/>
+        <Setter Property="SubMenuIconPressedColor" Value="Black"/>
+        <Setter Property="SubMenuIconDisabledColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconHoverColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconDisabledColor" Value="Black"/>
+    </Style>
+
+    <!--Default MenuItem style-->
+    <Style x:Key="MenuButton.MenuStyle" TargetType="one:MenuButton" BasedOn="{StaticResource Button.MenuStyle}">
+        <Setter Property="IsToggable" Value="False"/>
+        <Setter Property="IsCheckBoxVisible" Value="False"/>
+        <!--Popup-->
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.MenuButtonStyle}"/>
+        <Setter Property="PopupSpacing" Value="0"/>
+        <Setter Property="PopupPlacement" Value="RightTop"/>
+        <!--SubmenuIcon-->
+        <Setter Property="SubMenuIconAssemblyName" Value="One"/>
+        <Setter Property="SubMenuIconResourceKey" Value="Icons.arrow_popup_right.svg"/>
+        <Setter Property="SubMenuIconWidthRequest" Value="18"/>
+        <Setter Property="SubMenuIconHeightRequest" Value="18"/>
+        <Setter Property="SubMenuIconMargin" Value="8,0,15,0"/>
+        <!-- CheckBox -->
+        <Setter Property="CheckBoxStyle">
+            <Setter.Value>
+                <Style TargetType="one:CheckBox" BasedOn="{StaticResource CheckBox.DefaultStyle}">
+                    <Setter Property="Margin" Value="12,0,0,0"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <!--SubmenuIcon colors-->
+        <Setter Property="SubMenuIconColor" Value="Black"/>
+        <Setter Property="SubMenuIconHoverColor" Value="Black"/>
+        <Setter Property="SubMenuIconPressedColor" Value="Black"/>
+        <Setter Property="SubMenuIconDisabledColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconHoverColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledSubMenuIconDisabledColor" Value="{StaticResource Gray4}"/>
+        <!--Open or toggled-->
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextColor" Value="Black"/>
+        <Setter Property="ToggledIconColor" Value="Black"/>
+        <Setter Property="ToggledBorderColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ToggledBackgroundColor" Value="{StaticResource Gray3}"/>
+        <!--Open or toggled hover-->
+        <Setter Property="ToggledTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledIconHoverColor" Value="Black"/>
+        <Setter Property="ToggledBorderHoverColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="ToggledBackgroundHoverColor" Value="{StaticResource Gray2}"/>
+        <!--Open or pressed hover-->
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledBorderPressedColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{StaticResource Gray4}"/>
+    </Style>
+
+    <Style TargetType="one:MenuButton" BasedOn="{StaticResource MenuButton.MenuStyle}"/>
+    
+</ResourceDictionary>

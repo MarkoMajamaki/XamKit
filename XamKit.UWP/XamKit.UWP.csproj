@@ -120,12 +120,26 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\BorderRenderer.cs" />
+    <Compile Include="Controls\CarouselLayoutRenderer.cs" />
+    <Compile Include="Controls\ContentPageRenderer.cs" />
+    <Compile Include="Controls\EditorRenderer.cs" />
+    <Compile Include="Controls\EntryRenderer.cs" />
+    <Compile Include="Controls\FlyoutMenuRenderer.cs" />
+    <Compile Include="Controls\ScrollViewRenderer.cs" />
+    <Compile Include="Effects\ScrollEffect.cs" />
+    <Compile Include="Effects\TouchEffect.cs" />
+    <Compile Include="Extensions\ColorConverter.cs" />
+    <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\XamKit.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.967</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

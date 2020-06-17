@@ -47,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BorderRenderer.cs" />
+    <Compile Include="Controls\CarouselLayoutRenderer.cs" />
+    <Compile Include="Controls\ContentPageRenderer.cs" />
+    <Compile Include="Controls\EditorRenderer.cs" />
+    <Compile Include="Controls\EntryRenderer.cs" />
+    <Compile Include="Controls\FlyoutMenuRenderer.cs" />
+    <Compile Include="Effects\TouchEffect.cs" />
+    <Compile Include="Init.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.967</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />

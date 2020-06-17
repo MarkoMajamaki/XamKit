@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.SwitchStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+   </ResourceDictionary.MergedDictionaries>
+   
+    <Style x:Key="Switch.Android.Style" TargetType="one:Switch">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="IsThumbShadowEnabled" Value="True"/>
+        <Setter Property="EllipseDiameter" Value="40"/>
+        <Setter Property="EllipseColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="IsEllipseAnimationEnabled" Value="true"/>
+        <Setter Property="SwitchLocation" Value="Right"/>
+        <Setter Property="VisualStyle" Value="Android"/>
+        <Setter Property="TrackBorderToggledColor" Value="Transparent"/>
+        <Setter Property="TrackBorderUnToggledColor" Value="Transparent"/>
+        <Setter Property="TrackToggledColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="TrackUnToggledColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="ThumbBorderToggledColor" Value="Transparent"/>
+        <Setter Property="ThumbBorderUnToggledColor" Value="Transparent"/>
+        <Setter Property="ThumbToggledColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ThumbUnToggledColor" Value="{StaticResource Gray2}"/>        
+    </Style>
+
+    <Style TargetType="one:Switch" BasedOn="{StaticResource Switch.Android.Style}"/>
+
+    <Style x:Key="Switch.iOS.Style" TargetType="one:Switch">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="IsThumbShadowEnabled" Value="True"/>
+        <Setter Property="IsEllipseAnimationEnabled" Value="False"/>
+        <Setter Property="VisualStyle" Value="iOS"/>
+        <Setter Property="TrackBorderToggledColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="TrackBorderUnToggledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TrackToggledColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="TrackUnToggledColor" Value="White"/>
+        <Setter Property="ThumbBorderToggledColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ThumbBorderUnToggledColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ThumbToggledColor" Value="White"/>
+        <Setter Property="ThumbUnToggledColor" Value="White"/>
+    </Style>
+
+    <Style x:Key="Switch.UWP.Style" TargetType="one:Switch">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VisualStyle" Value="UWP"/>
+        <Setter Property="IsThumbShadowEnabled" Value="False"/>
+        <Setter Property="IsEllipseAnimationEnabled" Value="False"/>
+        <Setter Property="TrackBorderToggledColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="TrackBorderUnToggledColor" Value="Black"/>
+        <Setter Property="TrackToggledColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="TrackUnToggledColor" Value="White"/>
+        <Setter Property="ThumbBorderToggledColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ThumbBorderUnToggledColor" Value="White"/>
+        <Setter Property="ThumbToggledColor" Value="White"/>
+        <Setter Property="ThumbUnToggledColor" Value="Black"/>
+    </Style>
+
+</ResourceDictionary>

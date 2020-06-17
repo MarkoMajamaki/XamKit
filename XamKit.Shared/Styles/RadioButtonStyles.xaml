@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.RadioButtonStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="RadioButton.DefaultStyle" TargetType="one:RadioButton">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="TextMargin" Value="8,0,0,0"/>
+        <Setter Property="IndicatorMargin" Value="1"/>
+        <Setter Property="IndicatorWidthRequest" Value="18"/>
+        <Setter Property="IndicatorHeightRequest" Value="18"/>
+        <Setter Property="InnerIndicatorSpacing" Value="2"/>
+        <Setter Property="IndicatorVerticalOptions" Value="Center"/>
+        <Setter Property="IndicatorBorderThickness" Value="2"/>
+        <!--Ellipse animation-->
+        <Setter Property="EllipseDiameter" Value="40"/>
+        <Setter Property="EllipseColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="IsEllipseAnimationEnabled" Value="false"/>
+        <!--Default-->
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="IndicatorBackgroundColor" Value="Transparent"/>
+        <Setter Property="IndicatorBorderColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="IndicatorColor" Value="Transparent"/>
+        <!--Hover-->
+        <Setter Property="TextHoverColor" Value="Black"/>
+        <Setter Property="IndicatorBackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="IndicatorBorderHoverColor" Value="{StaticResource Gray10}"/>
+        <Setter Property="IndicatorHoverColor" Value="Transparent"/>
+        <!--Pressed-->
+        <Setter Property="TextPressedColor" Value="Black"/>
+        <Setter Property="IndicatorBackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="IndicatorBorderPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="IndicatorPressedColor" Value="Transparent"/>
+        <!--Toggled-->
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledIndicatorBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledIndicatorBorderColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledIndicatorColor" Value="{StaticResource PrimaryColor}"/>
+        <!--Toggled hover-->
+        <Setter Property="ToggledTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledIndicatorBackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="ToggledIndicatorBorderHoverColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledIndicatorHoverColor" Value="{StaticResource PrimaryColorDark}"/>
+        <!--Toggled pressed-->
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledIndicatorBackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="ToggledIndicatorBorderPressedColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledIndicatorPressedColor" Value="{StaticResource PrimaryColorLight}"/>
+        <!--Disabled-->
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="IndicatorBackgroundDisabledColor" Value="Transparent"/>
+        <Setter Property="IndicatorBorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="IndicatorDisabledColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="one:RadioButton" BasedOn="{StaticResource RadioButton.DefaultStyle}"/>
+
+</ResourceDictionary>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.TabViewStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--TabView style-->
+    <Style x:Key="TabView.DefaultStyle" TargetType="one:TabView">
+        <Setter Property="ItemsLayoutTemplate">
+            <DataTemplate>
+                <xam:CarouselLayout/>
+            </DataTemplate>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <DataTemplate>
+                <xam:TabItem/>
+            </DataTemplate>
+        </Setter>
+    </Style>
+
+    <Style TargetType="one:TabView" BasedOn="{StaticResource TabView.DefaultStyle}"/>
+
+    <!--Default tabbar button style-->
+    <Style x:Key="TabItem.HeaderButtonStyle" TargetType="one:ToggleButton">
+        <Setter Property="TextMargin" Value="16,0,16,0"/>
+        <Setter Property="IconMargin" Value="16,0,16,0"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="IconPlacement" Value="Top"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="AnimationStyle" Value="Ellipse"/>
+        <Setter Property="CommandExecuteEvent" Value="TouchReleased"/>
+        <Setter Property="TextColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>                
+        <Setter Property="TextPressedColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextPressedColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconPressedColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderPressedColor" Value="Transparent"/>
+        <Setter Property="BackgroundPressedColor" Value="{StaticResource Gray3}"/>            
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>
+        <Setter Property="BorderDisabledColor" Value="Transparent"/>
+        <Setter Property="BackgroundDisabledColor" Value="Transparent"/>
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextColor" Value="Black"/>
+        <Setter Property="ToggledIconColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundColor" Value="Transparent"/>
+        <Setter Property="ToggledBorderColor" Value="Transparent"/>         
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledExtraTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledIconPressedColor" Value="Black"/>
+        <Setter Property="ToggledBackgroundPressedColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="ToggledBorderPressedColor" Value="Transparent"/> 
+    </Style>
+
+    <xam:FadeAnimation x:Key="TabItemAnimation" Duration="250" FadeDirection="In" StartOpacity="0"/>
+
+    <Style x:Key="TabItem.DefaultStyle" TargetType="one:TabItem">
+        <Setter Property="ContentAnimation" Value="{StaticResource TabItemAnimation}"/>
+        <Setter Property="HeaderTemplate">
+            <DataTemplate>
+                <xam:ToggleButton Text="{Binding}" Style="{StaticResource TabItem.HeaderButtonStyle}"/>
+            </DataTemplate>
+        </Setter>       
+    </Style>
+
+    <Style TargetType="one:TabItem" BasedOn="{StaticResource TabItem.DefaultStyle}"/>
+
+    <!--TabBar style-->
+    <Style x:Key="TabBar.DefaultStyle" TargetType="one:TabBar">
+        <Setter Property="FocusLineColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="FocusLineHeightRequest" Value="4"/>
+        <Setter Property="BottomLineColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="BottomLineHeightRequest" Value="1"/>
+        <Setter Property="MinHeightRequest" Value="48"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CascadeInputTransparent" Value="false"/>
+        <Setter Property="InputTransparent" Value="true"/>
+    </Style>
+
+    <Style TargetType="one:TabBar" BasedOn="{StaticResource TabBar.DefaultStyle}"/>
+
+</ResourceDictionary>

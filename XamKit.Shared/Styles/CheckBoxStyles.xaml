@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.CheckBoxStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+   </ResourceDictionary.MergedDictionaries>
+
+    <!-- Default style -->
+    <Style x:Key="CheckBox.DefaultStyle" TargetType="one:CheckBox">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="TextMargin" Value="8,0,0,0"/>
+        <Setter Property="CheckBoxMargin" Value="1"/>
+        <Setter Property="CheckMarkIconAssemblyName" Value="One"/>
+        <Setter Property="CheckMarkIconResourceKey" Value="Icons.checkmark.svg"/>
+        <Setter Property="CheckBoxWidthRequest" Value="18"/>
+        <Setter Property="CheckBoxHeightRequest" Value="18"/>
+        <Setter Property="CheckMarkIconMargin" Value="3"/>
+        <Setter Property="CheckBoxVerticalOptions" Value="Center"/>
+        <Setter Property="CheckBoxBorderThickness" Value="2"/>
+        <Setter Property="CheckBoxCornerRadius" Value="2"/>
+        <Setter Property="EllipseDiameter" Value="40"/>
+        <Setter Property="EllipseColor" Value="{StaticResource Gray3}"/>
+        <Setter Property="IsEllipseAnimationEnabled" Value="false"/>
+        <!--Default-->
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="CheckBoxBackgroundColor" Value="Transparent"/>
+        <Setter Property="CheckBoxBorderColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="CheckMarkIconColor" Value="Transparent"/>
+        <!--Hover-->
+        <Setter Property="TextHoverColor" Value="Black"/>
+        <Setter Property="CheckBoxBackgroundHoverColor" Value="Transparent"/>
+        <Setter Property="CheckBoxBorderHoverColor" Value="{StaticResource Gray10}"/>
+        <Setter Property="CheckMarkIconHoverColor" Value="Transparent"/>
+        <!--Pressed-->
+        <Setter Property="TextPressedColor" Value="Black"/>
+        <Setter Property="CheckBoxBackgroundPressedColor" Value="Transparent"/>
+        <Setter Property="CheckBoxBorderPressedColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="CheckMarkIconPressedColor" Value="Transparent"/>
+        <!--Toggled-->
+        <Setter Property="ToggledTextColor" Value="Black"/>
+        <Setter Property="ToggledCheckBoxBackgroundColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledCheckBoxBorderColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="ToggledCheckMarkIconColor" Value="White"/>
+        <!--Toggled hover-->
+        <Setter Property="ToggledTextHoverColor" Value="Black"/>
+        <Setter Property="ToggledCheckBoxBackgroundHoverColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledCheckBoxBorderHoverColor" Value="{StaticResource PrimaryColorDark}"/>
+        <Setter Property="ToggledCheckMarkIconHoverColor" Value="White"/>
+        <!--Toggled pressed-->
+        <Setter Property="ToggledTextPressedColor" Value="Black"/>
+        <Setter Property="ToggledCheckBoxBackgroundPressedColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledCheckBoxBorderPressedColor" Value="{StaticResource PrimaryColorLight}"/>
+        <Setter Property="ToggledCheckMarkIconPressedColor" Value="White"/>
+        <!--Disabled-->
+        <Setter Property="TextDisabledColor" Value="{StaticResource Gray8}"/>
+        <Setter Property="CheckBoxBackgroundDisabledColor" Value="Transparent"/>
+        <Setter Property="CheckBoxBorderDisabledColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="CheckMarkIconDisabledColor" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="one:CheckBox" BasedOn="{StaticResource CheckBox.DefaultStyle}"/>
+
+</ResourceDictionary>

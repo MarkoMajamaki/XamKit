@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.NavigationBarStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:ButtonStyles/>
+   </ResourceDictionary.MergedDictionaries>
+
+    <x:Int32 x:Key="AnimationDuration">400</x:Int32>
+
+    <Style x:Key="NavigationBar.Android.DefaultStyle" TargetType="one:NavigationBar">
+        <Setter Property="ShadowHeight" Value="8"/>
+        <Setter Property="LineHeight" Value="0"/>
+        <Setter Property="Animation" Value="Fade"/>
+        <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
+        <Setter Property="AnimationEasing" Value="{x:Static Easing.Linear}"/>
+        <Setter Property="HeightRequest" Value="56"/>
+        <Setter Property="TopSpacing" Value="0"/>
+        <Setter Property="TitleAlignment" Value="Left"/>
+        <Setter Property="TitleTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Label Text="{Binding}" TextColor="Black" FontFamily="Roboto" FontSize="20" VerticalOptions="Center" LineBreakMode="TailTruncation" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BackTitleTemplate" Value="{x:Null}"/>
+        <Setter Property="BackButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:BackButton 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                        BorderThickness="0"
+                        CornerRadius="20"
+                        IconWidthRequest="24"                        
+                        IconHeightRequest="24"
+                        IconMargin="0"
+                        Margin="8,0,24,0"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        IconChangeAnimation="Rolling"
+                        IconChangeAnimationDuration="{StaticResource AnimationDuration}"
+                        IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
+                        BackIconAssemblyName="One"
+                        BackIconResourceKey="Icons.navigate_back_android.svg"
+                        MenuIconAssemblyName="One"
+                        MenuIconResourceKey="Icons.menu.svg"
+                        CloseIconAssemblyName="One"
+                        CloseIconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.Black.OutlinedStyle}"
+                        AnimationStyle="Default">
+                    </xam:BackButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SearchTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:TextBox
+                        Placeholder="Search"
+                        VerticalOptions="Center"
+                        IsLineVisible="False"
+                        FontSize="20"
+                        TextPadding="0"
+                        BackgroundColor="Transparent" 
+                        BorderBackgroundColor="Transparent"
+                        CornerRadius="0"
+                        BorderThickness="0"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CloseButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:Button 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                        BorderThickness="0"
+                        CornerRadius="40"
+                        IconWidthRequest="24"                        
+                        IconHeightRequest="24"
+                        IconMargin="0"
+                        Margin="8"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IconAssemblyName="One"
+                        IconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.Black.OutlinedStyle}"
+                        AnimationStyle="Default">
+                    </xam:Button>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--NavigationBar default style-->
+    <Style x:Key="NavigationBar.iOS.DefaultStyle" TargetType="one:NavigationBar">
+        <Setter Property="Animation" Value="SlideHorizontal"/>
+        <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
+        <Setter Property="AnimationEasing" Value="{x:Static Easing.CubicOut}"/>
+        <Setter Property="HeightRequest" Value="58"/>
+        <Setter Property="TopSpacing" Value="10"/>
+        <Setter Property="TitleTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Label Text="{Binding}" TextColor="Black" FontFamily="Helvetica" FontSize="16" VerticalOptions="Center" FontAttributes="Bold" LineBreakMode="TailTruncation" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BackTitleTemplate">
+            <Setter.Value>
+                <DataTemplate>  
+                    <xam:Button Text="{Binding}" Style="{StaticResource Button.TextStyle}" VerticalOptions="Fill" Padding="0" TextMargin="0" TextAlignment="Left"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BackButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:BackButton 
+                        HeightRequest="-1" 
+                        WidthRequest="-1" 
+                        BorderThickness="0"
+                        IconWidthRequest="26"
+                        IconHeightRequest="26"
+                        IconMargin="8,-3,0,0"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IconChangeAnimation="Fade"
+                        IconChangeAnimationDuration="{StaticResource AnimationDuration}"
+                        IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
+                        BackIconAssemblyName="One"
+                        BackIconResourceKey="Icons.navigate_back_ios.svg"
+                        MenuIconAssemblyName="One"
+                        MenuIconResourceKey="Icons.menu.svg"
+                        CloseIconAssemblyName="One"
+                        CloseIconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.TextStyle}"
+                        AnimationStyle="Default">
+                    </xam:BackButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SearchTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:TextBox
+                        BackgroundColor="Transparent"
+                        BorderBackgroundColor="White"
+                        BorderBackgroundFocusedColor="White"
+                        Placeholder="Search"
+                        VerticalOptions="Center"
+                        FontSize="16"
+                        TextPadding="8,4"
+                        Margin="8"
+                        IsLineVisible="False"
+                        CornerRadius="8"
+                        BorderThickness="0"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CloseButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:Button 
+                        HeightRequest="32" 
+                        WidthRequest="32" 
+                        BorderThickness="0"
+                        CornerRadius="40"
+                        IconWidthRequest="24"                        
+                        IconHeightRequest="24"
+                        IconMargin="0"
+                        Margin="0,0,8,0"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        IconAssemblyName="One"
+                        IconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.Black.OutlinedStyle}"
+                        AnimationStyle="Default">
+                    </xam:Button>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}"/>
+
+    <Style x:Key="NavigationBar.UWP.DefaultStyle" TargetType="one:NavigationBar">
+        <Setter Property="ShadowHeight" Value="8"/>
+        <Setter Property="LineHeight" Value="0"/>
+        <Setter Property="Animation" Value="Fade"/>
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="TopSpacing" Value="0"/>
+        <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
+        <Setter Property="AnimationEasing" Value="{x:Static Easing.Linear}"/>
+        <Setter Property="BackTitleTemplate" Value="{x:Null}"/>
+        <Setter Property="TitleAlignment" Value="Center"/>
+        <Setter Property="TitleTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Label Text="{Binding}" TextColor="Black" FontFamily="Helvetica" FontSize="16" VerticalOptions="Center" FontAttributes="Bold" LineBreakMode="TailTruncation" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BackButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:BackButton 
+                        HeightRequest="32" 
+                        WidthRequest="32" 
+                        BorderThickness="0"
+                        CornerRadius="40"
+                        IconWidthRequest="24"                        
+                        IconHeightRequest="24"
+                        IconMargin="0"
+                        Margin="4,4,20,4"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IconChangeAnimationDuration="{StaticResource AnimationDuration}"
+                        IconChangeAnimation="Rolling"
+                        IconChangeAnimationEasing="{x:Static Easing.CubicOut}"
+                        BackIconAssemblyName="One"
+                        BackIconResourceKey="Icons.navigate_back_android.svg"
+                        MenuIconAssemblyName="One"
+                        MenuIconResourceKey="Icons.menu.svg"
+                        CloseIconAssemblyName="One"
+                        CloseIconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.Black.OutlinedStyle}"
+                        AnimationStyle="Default">
+                    </xam:BackButton>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SearchTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:TextBox
+                        Placeholder="Search"
+                        IsLineVisible="False"
+                        VerticalOptions="Center"
+                        FontSize="16"
+                        BackgroundColor="Transparent" 
+                        BorderBackgroundColor="Transparent"
+                        CornerRadius="0"
+                        BorderThickness="0"
+                        TextPadding="12,0">
+                    </xam:TextBox>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CloseButtonTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:Button 
+                        HeightRequest="32" 
+                        WidthRequest="32" 
+                        BorderThickness="0"
+                        CornerRadius="40"
+                        IconWidthRequest="24"                        
+                        IconHeightRequest="24"
+                        IconMargin="0"
+                        Margin="4"
+                        IconHorizontalOptions="Center" 
+                        IconVerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IconAssemblyName="One"
+                        IconResourceKey="Icons.close.svg"
+                        Style="{StaticResource Button.Black.OutlinedStyle}">
+                    </xam:Button>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+        
+    <!-- MODAL -->
+
+    <Style x:Key="NavigationBar.Android.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.Android.DefaultStyle}">
+        <Setter Property="TitleAlignment" Value="Left"/>
+    </Style>
+
+    <!--NavigationBar default style-->
+    <Style x:Key="NavigationBar.iOS.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}">
+        <Setter Property="HeightRequest" Value="58"/>
+        <Setter Property="TopSpacing" Value="0"/>
+    </Style>
+
+    <Style x:Key="NavigationBar.UWP.ModalStyle" TargetType="one:NavigationBar" BasedOn="{StaticResource NavigationBar.UWP.DefaultStyle}">
+        <Setter Property="TitleAlignment" Value="Center"/>
+    </Style>
+
+</ResourceDictionary>

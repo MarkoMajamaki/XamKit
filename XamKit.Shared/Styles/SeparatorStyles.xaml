@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.SeparatorStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Separator.DefaultStyle" TargetType="one:Separator">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextMargin" Value="10,10,0,0"/>
+        <Setter Property="Margin" Value="0,10"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style TargetType="one:Separator" BasedOn="{StaticResource Separator.DefaultStyle}"/>
+
+    <Style x:Key="Separator.MainMenuStyle" TargetType="one:Separator">
+        <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextMargin" Value="16,12,0,0"/>
+        <Setter Property="Margin" Value="0,12"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="Separator.SmallStyle" TargetType="one:Separator">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextMargin" Value="16,8,0,8"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="Separator.LargeStyle" TargetType="one:Separator">
+        <Setter Property="TextColor" Value="{StaticResource Gray9}"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray4}"/>
+        <Setter Property="TextMargin" Value="16,12,0,12"/>
+        <Setter Property="Margin" Value="0,24,0,0"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.PopupButtonStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:ButtonStyles/>
+        <xam:ToggleButtonStyles/>
+        <xam:PopupStyles/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="one:PopupButton" BasedOn="{StaticResource Button.OutlinedStyle}">
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+    </Style>
+
+    <!-- Blue background popup button style -->
+    <Style x:Key="PopupButton.ContainedStyle" TargetType="one:PopupButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}">
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+    </Style>
+
+    <!--Transparent background with blue border. Blue background and white icon when pressed and checked.-->
+    <Style x:Key="PopupButton.OutlinedStyle" TargetType="one:PopupButton" BasedOn="{StaticResource ToggleButton.OutlinedStyle}">
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="PopupSpacing" Value="4"/>
+        <Setter Property="PopupPlacement" Value="BottomLeft"/>
+    </Style>
+
+</ResourceDictionary>

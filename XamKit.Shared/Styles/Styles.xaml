@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.Styles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <xam:Colors/>
+    <xam:TypographyStyles/>
+    <xam:SwitchStyles/>
+    <xam:ButtonStyles/>
+    <xam:ToggleButtonStyles/>
+    <xam:CheckBoxStyles/>
+    <xam:PopupButtonStyles/>
+    <xam:RadioButtonStyles/>
+    <xam:MenuButtonStyles/>
+    <xam:FlyoutMenuStyles/>
+    <xam:NavigationBarStyles/>
+    <xam:ContentPageStyles/>
+    <xam:NavigationPageStyles/>
+    <xam:ItemsViewStyles/>
+    <xam:ToolBarStyles/>
+    <xam:TextBoxStyles/>
+    <xam:DropDownStyles/>
+    <xam:ActivityIndicatorStyles/>
+    <xam:CarouselViewStyles/>
+    <xam:TabViewStyles/>
+    <xam:SeparatorStyles/>
+    <xam:PopupStyles/>
+
+</ResourceDictionary>

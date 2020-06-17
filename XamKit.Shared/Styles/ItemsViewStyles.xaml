@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamKit.ItemsViewStyles"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:Colors/>
+        <xam:CheckBoxStyles/>
+   </ResourceDictionary.MergedDictionaries>
+
+    <xam:ItemAnimation
+        x:Key="SlideInItemAddAnimation"
+        OpacityInit="0"
+        OpacityStart="0"
+        OpacityEnd="1"
+        OpacityStartTime="0"
+        OpacityEndTime="0.1"
+        OffsetXInit="20"
+        OffsetXStart="20"
+        OffsetXStartTime="0"
+        OffsetXEndTime="1"
+        OffsetAnimationEasing="{x:Static one:AnimationUtils.EaseOutQuint}">
+    </xam:ItemAnimation>
+
+    <xam:ItemAnimation
+        x:Key="SlideOutItemAddAnimation"
+        OpacityStart="1"
+        OpacityEnd="0"
+        OpacityStartTime="0"
+        OpacityEndTime="1.0"
+        OffsetXStart="0"
+        OffsetXEnd="-20"
+        OffsetXStartTime="0"
+        OffsetXEndTime="0.9"
+        OffsetAnimationEasing="{x:Static one:AnimationUtils.EaseOutQuint}">
+    </xam:ItemAnimation>
+    
+    <xam:ItemAnimation
+        x:Key="DefaultItemAddAnimation"
+        OpacityInit="0"
+        OpacityStart="0"
+        OpacityEnd="1"
+        OpacityStartTime="0.6"
+        OpacityEndTime="1"
+        ScaleHeightInit="0"
+        ScaleHeightStart="0"
+        ScaleHeightEnd="1"
+        ScaleHeightStartTime="0"
+        ScaleHeightEndTime="0.6"
+        ScaleAnimationEasing="{x:Static Easing.SpringOut}"/>
+
+    <xam:ItemAnimation
+        x:Key="DefaultItemRemoveAnimation"
+        OpacityStart="1"
+        OpacityEnd="0"
+        OpacityStartTime="0"
+        OpacityEndTime="0.5"
+        ScaleHeightStart="1"
+        ScaleHeightEnd="0"
+        ScaleHeightStartTime="0.5"
+        ScaleHeightEndTime="1"/>
+    
+    <Style x:Key="ItemsView.DefaultStyle" TargetType="one:ItemsView">
+        <Setter Property="ItemsLayoutTemplate">
+            <DataTemplate>
+                <xam:VirtualizingStackLayout/>
+            </DataTemplate>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <DataTemplate>
+                <ContentView/>
+            </DataTemplate>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="one:ItemsView" BasedOn="{StaticResource ItemsView.DefaultStyle}"/>
+
+     <Style x:Key="ItemContainer.DefaultStyle" TargetType="one:ItemContainer">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="SeparatorColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="IsSeparatorVisible" Value="True"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <!--
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="CheckBoxBackgroundColor" Value="Transparent"/>
+        <Setter Property="CheckBoxBorderColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="CheckBoxBorderThickness" Value="1"/>
+        <Setter Property="CheckBoxCornerRadius" Value="2"/>
+        <Setter Property="CheckMarkIconAssemblyName" Value="One"/>
+        <Setter Property="CheckMarkIconResourceKey" Value="Icons.checkmark.svg"/>
+        <Setter Property="CheckMarkIconColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="CheckBoxWidthRequest" Value="20"/>
+        <Setter Property="CheckBoxHeightRequest" Value="20"/>
+        <Setter Property="CheckBoxWidthRequest" Value="20"/>
+        <Setter Property="CheckBoxHeightRequest" Value="20"/>
+        <Setter Property="CheckMarkIconMargin" Value="4"/>
+        <Setter Property="CheckBoxVerticalOptions" Value="Center"/>
+        <Setter Property="ContentHorizontalOptions" Value="Start"/>
+        <Setter Property="CheckBoxMargin" Value="10,0,0,0"/>
+        <Setter Property="IconMargin" Value="10,5,0,5"/>
+        <Setter Property="TextMargin" Value="10,0,10,0"/>
+        <Setter Property="IconHeightRequest" Value="20"/>
+        <Setter Property="IconWidthRequest" Value="20"/>
+        <Setter Property="IconPlacement" Value="Left"/>
+        <Setter Property="IconHorizontalOptions" Value="Start"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VisualStates" Value="{StaticResource Item.DefaultStyle.VisualStates}"/>
+        -->
+        <Setter Property="HeightRequest" Value="48"/>
+        <Setter Property="WidthRequest" Value="-1"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+    </Style>    
+    
+    <Style TargetType="one:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}"/>
+    
+    <Style x:Key="ItemContainer.SimpleStyle" TargetType="one:ItemContainer" BasedOn="{StaticResource ItemContainer.DefaultStyle}">
+        <!--
+        <Setter Property="CheckBoxMargin" Value="20,0,10,0"/>
+        -->
+        <Setter Property="HorizontalOptions" Value="Fill"/>        
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+    x:Class="XamKit.ToolBarStyles">
+
+    <ResourceDictionary.MergedDictionaries>
+        <xam:ButtonStyles/>
+        <xam:ToggleButtonStyles/>
+        <xam:MenuButtonStyles/>
+        <xam:PopupStyles/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- ANIMATIONS -->
+
+    <xam:ItemAnimation
+        x:Key="ToolBar.ItemAddAllAnimation"
+        OffsetYInit="48"
+        OffsetYStart="48"
+        OffsetYEnd="0"
+        OffsetYStartTime="0"
+        OffsetYEndTime="1"
+        OffsetAnimationEasing="{x:Static Easing.CubicOut}"/>
+    
+    <xam:ItemAnimation
+        x:Key="ToolBar.ItemAddAnimation"
+        OffsetYInit="48"
+        OffsetYStart="48"
+        OffsetYEnd="0"
+        OffsetYStartTime="0"
+        OffsetYEndTime="1"
+        OffsetAnimationEasing="{x:Static Easing.CubicOut}"/>
+
+    <xam:ItemAnimation
+        x:Key="ToolBar.ItemRemoveAnimation"
+        OffsetYEnd="48"
+        OffsetYStartTime="0"
+        OffsetYEndTime="1"
+        OffsetAnimationEasing="{x:Static Easing.CubicOut}"/>
+
+    <xam:ItemAnimation
+        x:Key="ToolBar.ItemRemoveAllAnimation"
+        OffsetYEnd="48"
+        OffsetYStartTime="0"
+        OffsetAnimationEasing="{x:Static Easing.CubicOut}"/>
+
+    <!-- BUTTONS -->
+
+    <!--Contained toggle button style for desktop (and tablet)-->
+    <Style x:Key="ToolBarButton.ContainedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.ContainedStyle}"/>
+
+    <Style x:Key="ToolBarButton.BlackStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}"/>
+
+    <!--Outlined button style for phone (and tablet) -->
+    <Style x:Key="ToolBarButton.OutlinedStyle" TargetType="one:Button" BasedOn="{StaticResource Button.Black.OutlinedStyle}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="ExtraTextFontSize" Value="12"/>
+        <Setter Property="TextMargin" Value="4,0,4,12"/>
+        <Setter Property="IconMargin" Value="0,8,0,0"/>
+        <Setter Property="IconPlacement" Value="Top"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="HeightRequest" Value="56"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="ContentVerticalOptions" Value="Center"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+    </Style>
+
+    <!--MenuItem style for all idioms-->
+    <Style x:Key="ToolBarButton.MenuStyle" TargetType="one:Button" BasedOn="{StaticResource Button.MenuStyle}">
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+    </Style>
+
+    <!-- Menu button style for desktop (and tablet)-->
+    <Style x:Key="ToolBarToggleButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}"/>
+
+    <!-- Menu button style for phone (and tablet) -->
+    <Style x:Key="ToolBarToggleButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="ExtraTextFontSize" Value="12"/>
+        <Setter Property="TextMargin" Value="4,0,4,12"/>
+        <Setter Property="IconMargin" Value="0,8,0,0"/>
+        <Setter Property="IconPlacement" Value="Top"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="HeightRequest" Value="56"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="ContentVerticalOptions" Value="Center"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+    </Style>
+
+    <!-- Menu toggle button for desktop (and tablet) -->
+    <Style x:Key="ToolBarMenuButton.ContainedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.ContainedStyle}">
+        <Setter Property="IconMargin" Value="9"/>
+        <Setter Property="AnimationStyle" Value="Default"/>
+    </Style>
+
+    <!-- Menu toggle button for phone (and tablet) -->
+    <Style x:Key="ToolBarMenuButton.OutlinedStyle" TargetType="one:ToggleButton" BasedOn="{StaticResource ToggleButton.Black.OutlinedStyle}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="ExtraTextFontSize" Value="12"/>
+        <Setter Property="TextMargin" Value="4,0,4,12"/>
+        <Setter Property="IconMargin" Value="0,8,0,0"/>
+        <Setter Property="IconPlacement" Value="Top"/>
+        <Setter Property="IconWidthRequest" Value="24"/>
+        <Setter Property="IconHeightRequest" Value="24"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="HeightRequest" Value="56"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="IconHorizontalOptions" Value="Center"/>
+        <Setter Property="IconVerticalOptions" Value="Center"/>
+        <Setter Property="ContentVerticalOptions" Value="Center"/>
+        <Setter Property="ContentHorizontalOptions" Value="Center"/>
+    </Style>
+
+    <xam:ToolBarMenuItemContainerGenerator x:Key="ToolBarMenuItemContainerGenerator">
+        <xam:ToolBarMenuItemContainerGenerator.MenuItemButtonTemplate>
+            <DataTemplate>
+                <xam:Button Style="{StaticResource ToolBarButton.MenuStyle}"/>
+            </DataTemplate>
+        </xam:ToolBarMenuItemContainerGenerator.MenuItemButtonTemplate>
+    </xam:ToolBarMenuItemContainerGenerator>
+
+    <!-- VIEW TOOLBAR -->
+
+    <!-- ToolBar default style -->
+    <Style x:Key="ToolBar.DefaultStyle" TargetType="one:ToolBar">
+        <Setter Property="DefaultResources">
+            <Setter.Value>
+                <OnIdiom x:TypeArguments="ResourceDictionary">
+                    <OnIdiom.Phone>
+                        <ResourceDictionary>
+                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
+                        </ResourceDictionary>
+                    </OnIdiom.Phone>
+                    <OnIdiom.Desktop>
+                        <ResourceDictionary>
+                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.ContainedStyle}"/>
+                        </ResourceDictionary>
+                    </OnIdiom.Desktop>
+                    <OnIdiom.Tablet>
+                        <ResourceDictionary>
+                            <Style TargetType="one:Button" BasedOn="{StaticResource ToolBarButton.OutlinedStyle}"/>
+                        </ResourceDictionary>
+                    </OnIdiom.Tablet>
+                </OnIdiom>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsBackgroundColor" Value="White"/>
+        <Setter Property="MenuItemsBackgroundColor" Value="White"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="ShadowHeight">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS" Value="0"/>
+                    <On Platform="UWP" Value="8"/>
+                    <On Platform="Android" Value="8"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="LineHeightRequest">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS" Value="1"/>
+                    <On Platform="UWP" Value="0"/>
+                    <On Platform="Android" Value="0"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MenuItemContainerGenerator" Value="{StaticResource ToolBarMenuItemContainerGenerator}"/>
+        <Setter Property="ShowDuration">
+            <OnIdiom Phone="500" Default="400"/>
+        </Setter>
+        <Setter Property="HideDuration">
+            <OnIdiom Phone="500" Default="400"/>
+        </Setter>
+        <Setter Property="ShowMenuDuration" Value="400"/>
+        <Setter Property="HideMenuDuration" Value="400"/>
+        <Setter Property="ItemAddAnimationDuration">
+            <OnIdiom Phone="300" Default="200"/>
+        </Setter>
+        <Setter Property="ItemAddAnimationDuration">
+            <OnIdiom Phone="250" Default="200"/>
+        </Setter>
+        <Setter Property="ItemAddAllAnimationDuration">
+            <OnIdiom Phone="250" Default="200"/>
+        </Setter>
+        <Setter Property="ItemRemoveAnimationDuration">
+            <OnIdiom Phone="250" Default="200"/>
+        </Setter>
+        <Setter Property="ItemRemoveAllAnimationDuration">
+            <OnIdiom Phone="250" Default="200"/>
+        </Setter>
+        <Setter Property="HideEasingFunction" Value="{x:Static Easing.CubicOut}"/>
+        <Setter Property="ShowEasingFunction" Value="{x:Static Easing.CubicOut}"/>
+        <Setter Property="ShowMenuEasingFunction" Value="{x:Static one:AnimationUtils.EaseOutQuint}"/>
+        <Setter Property="HideMenuEasingFunction" Value="{x:Static Easing.CubicOut}"/>
+        <Setter Property="ItemAddAnimation" Value="{StaticResource ToolBar.ItemAddAnimation}"/>
+        <Setter Property="ItemAddAllAnimation" Value="{StaticResource ToolBar.ItemAddAllAnimation}"/>
+        <Setter Property="ItemRemoveAnimation" Value="{StaticResource ToolBar.ItemRemoveAnimation}"/>
+        <Setter Property="ItemRemoveAllAnimation" Value="{StaticResource ToolBar.ItemRemoveAllAnimation}"/>
+        <Setter Property="PopupStyle" Value="{StaticResource Popup.DefaultStyle}"/>
+        <Setter Property="ItemsPadding">
+            <OnIdiom x:TypeArguments="Thickness" Phone="0" Tablet="0" Desktop="8"/>
+        </Setter>
+        <Setter Property="Spacing">
+            <OnIdiom x:TypeArguments="x:Double" Phone="0" Tablet="0" Desktop="8"/>
+        </Setter>
+        <Setter Property="MenuMode">
+            <OnIdiom 
+                x:TypeArguments="one:ToolBarMenuModes" 
+                Phone="Bottom" 
+                Tablet="Popup" 
+                Desktop="Popup"/>
+        </Setter>
+        <Setter Property="ItemsAlignment">
+            <OnIdiom 
+                x:TypeArguments="one:ItemsAlignments" 
+                Phone="Center" 
+                Tablet="Center" 
+                Desktop="Left"/>
+        </Setter>
+        <Setter Property="MaxItems">
+            <OnIdiom 
+                x:TypeArguments="x:Int32" 
+                Phone="5" 
+                Tablet="6" 
+                Desktop="1000"/>
+        </Setter>
+        <Setter Property="MenuItemsLayoutTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackLayout VerticalOptions="Start" Spacing="0">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness" Phone="0,16,0,16" Tablet="0" Desktop="0"/>
+                        </StackLayout.Margin>
+                    </StackLayout>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:Button 
+                        Text="{Binding Text}" 
+                        IconResourceKey="{Binding IconResourceKey}"
+                        IconAssemblyName="{Binding IconAssemblyName}"
+                        Command="{Binding Command}">
+                        <xam:Button.Style>
+                            <OnIdiom 
+                                x:TypeArguments="Style" 
+                                Phone="{StaticResource ToolBarButton.OutlinedStyle}" 
+                                Tablet="{StaticResource ToolBarButton.OutlinedStyle}" 
+                                Desktop="{StaticResource ToolBarButton.ContainedStyle}"/>
+                        </xam:Button.Style>
+                    </xam:Button>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MenuButtonTemplate">
+            <DataTemplate>
+                <xam:ToggleButton 
+                    IconResourceKey="Icons.dots.svg" 
+                    IconAssemblyName="One">
+                    <xam:ToggleButton.Style>
+                        <OnIdiom 
+                            x:TypeArguments="Style" 
+                            Phone="{StaticResource ToolBarMenuButton.OutlinedStyle}" 
+                            Tablet="{StaticResource ToolBarMenuButton.OutlinedStyle}" 
+                            Desktop="{StaticResource ToolBarMenuButton.ContainedStyle}"/>
+                    </xam:ToggleButton.Style>
+                    <xam:ToggleButton.Text>
+                        <OnIdiom 
+                            x:TypeArguments="sys:String" 
+                            Phone="more" 
+                            Tablet="more" 
+                            Desktop=""/>
+                    </xam:ToggleButton.Text>
+                </xam:ToggleButton>
+            </DataTemplate>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}"/>
+
+    <!-- MODAL VIEW TOOLBAR -->
+
+    <Style x:Key="ToolBar.ModalPageStyle" TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
+        <Setter Property="DefaultResources">
+            <Setter.Value>
+                <ResourceDictionary>
+                    <Style TargetType="one:Button" BasedOn="{StaticResource Button.TextStyle}"/>
+                </ResourceDictionary>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsBackgroundColor" Value="White"/>
+        <Setter Property="MenuItemsBackgroundColor" Value="{StaticResource Gray2}"/>
+        <Setter Property="LineColor" Value="{StaticResource Gray5}"/>
+        <Setter Property="MenuItemContainerGenerator" Value="{StaticResource ToolBarMenuItemContainerGenerator}"/>
+        <Setter Property="MenuMode" Value="Popup"/>
+        <Setter Property="ItemsPadding" Value="8"/>
+        <Setter Property="ItemsAlignment">
+            <OnIdiom Phone="Right" Tablet="Right" Desktop="Right"/>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <xam:Button 
+                        Text="{Binding Text}" 
+                        IconResourceKey="{Binding IconResourceKey}"
+                        IconAssemblyName="{Binding IconAssemblyName}" 
+                        Command="{Binding Command}">
+                        <xam:Button.Style>
+                            <OnIdiom x:TypeArguments="Style" 
+                                Phone="{StaticResource ToolBarButton.OutlinedStyle}" 
+                                Tablet="{StaticResource ToolBarButton.OutlinedStyle}" 
+                                Desktop="{StaticResource ToolBarButton.ContainedStyle}"/>
+                        </xam:Button.Style>
+                    </xam:Button>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MenuButtonTemplate">
+            <DataTemplate>
+                <xam:ToggleButton 
+                    IconResourceKey="Icons.dots.svg" 
+                    IconAssemblyName="One"
+                    BorderThickness="0"
+                    IconWidthRequest="24"
+                    IconHeightRequest="24"
+                    Style="{StaticResource ToolBarMenuButton.OutlinedStyle}">
+                    <xam:ToggleButton.Text>
+                        <OnIdiom 
+                            x:TypeArguments="sys:String" 
+                            Phone="more" 
+                            Tablet="more" 
+                            Desktop=""/>
+                    </xam:ToggleButton.Text>
+                </xam:ToggleButton>
+            </DataTemplate>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToolBar.NavigationBarStyle" TargetType="one:ToolBar" BasedOn="{StaticResource ToolBar.DefaultStyle}">
+        <Setter Property="ItemsBackgroundColor" Value="Transparent"/>
+        <Setter Property="MenuMode" Value="Popup"/>
+        <Setter Property="LineHeightRequest" Value="0"/>
+        <Setter Property="ShadowHeight" Value="0"/>
+        <Setter Property="Spacing" Value="0"/>
+        <Setter Property="ItemsPadding" Value="0"/>
+        <Setter Property="MaxItems">
+            <Setter.Value>
+                <OnIdiom Phone="3" Tablet="3" Desktop="4"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DefaultResources">
+            <Setter.Value>
+                <ResourceDictionary>
+                    <Style TargetType="one:Button" BasedOn="{StaticResource Button.NavigationBar.BlackStyle}"/>
+                    <Style TargetType="one:MenuButton" BasedOn="{StaticResource MenuButton.NavigationBar.BlackStyle}"/>
+                </ResourceDictionary>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MenuButtonTemplate">
+            <DataTemplate>
+                <xam:ToggleButton 
+                    IconResourceKey="Icons.dots.svg" 
+                    IconAssemblyName="One"
+                    Style="{StaticResource ToggleButton.NavigationBar.BlackStyle}">
+                </xam:ToggleButton>
+            </DataTemplate>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
