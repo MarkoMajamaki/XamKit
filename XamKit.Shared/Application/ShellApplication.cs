@@ -9,7 +9,6 @@ namespace XamKit
 {
     public class ShellApplication : Application
     {
-        private RootPage _rootPage = null;
         private FlyoutMenu _flyoutMenu = null;
         private BoxView _titleBarSeparator = null;
 
@@ -153,8 +152,7 @@ namespace XamKit
 
         public ShellApplication()
         {
-            _rootPage = new RootPage();
-            _rootPage.DeviceBackButtonPressed += OnDeviceBackButtonPressed;
+            RootPage.Instance.DeviceBackButtonPressed += OnDeviceBackButtonPressed;
 
             // Create popup layout for popups
             Popup.PopupLayout = new PopupLayout();
@@ -183,7 +181,6 @@ namespace XamKit
             // Content
 
             _navigationPage = new NavigationPage();
-            _navigationPage.Style = NavigationPageStyle;
             _flyoutMenu.Content = _navigationPage;
             _navigationPage.MenuButtonTapped += (s, a) =>
             {
@@ -193,7 +190,6 @@ namespace XamKit
             // MainMenu
 
             _mainMenuNavigationPage = new NavigationPage();
-            _mainMenuNavigationPage.Style = NavigationPageStyle;
             _mainMenuNavigationPage.HasPagesChanged += (object s, bool hasPages) =>
             {
                 if (hasPages)
@@ -209,7 +205,6 @@ namespace XamKit
             // SubMenu
 
             _subMenuNavigationPage = new NavigationPage();
-            _subMenuNavigationPage.Style = NavigationPageStyle;
             _subMenuNavigationPage.HasPagesChanged += (object s, bool hasPages) =>
             {
                 if (hasPages)
@@ -226,7 +221,7 @@ namespace XamKit
 
             _modalNavigationPage = new NavigationPage();
             _modalNavigationPage.IsVisible = false;
-            _modalNavigationPage.Style = ModalNavigationPageStyle;
+
             _modalNavigationPage.HasPagesChanged += (object s, bool hasPages) =>
             {
                 _modalNavigationPage.IsVisible = hasPages;
@@ -248,9 +243,58 @@ namespace XamKit
             m_rootLayout.Children.Add(_titleBarSeparator);
 
             // Add to content
-            _rootPage.Content = m_rootLayout;
+            RootPage.Instance.Content = m_rootLayout;
+            MainPage = RootPage.Instance;
+        }
 
-            MainPage = _rootPage;
+        protected void InitializeShellApplication()
+        {
+            if (FlyoutMenuStyle == null)
+            {
+                object flyoutMenuStyle = null;
+
+                if (Device.Idiom == TargetIdiom.Phone)
+                {
+                    Application.Current.Resources.TryGetValue("FlyoutMenu.PhoneStyle", out flyoutMenuStyle);
+                }
+                else if (Device.Idiom == TargetIdiom.Desktop)
+                {
+                    Application.Current.Resources.TryGetValue("FlyoutMenu.DesktopStyle", out flyoutMenuStyle);
+                }
+                else if (Device.Idiom == TargetIdiom.Tablet)
+                {
+                    Application.Current.Resources.TryGetValue("FlyoutMenu.TabletStyle", out flyoutMenuStyle);
+                }
+
+                if (flyoutMenuStyle != null)
+                {
+                    FlyoutMenuStyle = flyoutMenuStyle as Style;
+                }
+            }
+            else
+            {
+                _flyoutMenu.Style = FlyoutMenuStyle;
+            }
+
+            if (ModalNavigationPageStyle == null && Application.Current.Resources.TryGetValue("NavigationPage.ModalStyle", out object modalPageStyle))
+            {
+                ModalNavigationPageStyle = modalPageStyle as Style;
+            }
+            else
+            {
+                _modalNavigationPage.Style = ModalNavigationPageStyle;
+            }
+
+            if (NavigationPageStyle == null && Application.Current.Resources.TryGetValue("NavigationPage.DefaultStyle", out object navigationPageStyle))
+            {
+                NavigationPageStyle = navigationPageStyle as Style;
+            }
+            else
+            {
+                _navigationPage.Style = NavigationPageStyle;
+                _mainMenuNavigationPage.Style = NavigationPageStyle;
+                _subMenuNavigationPage.Style = NavigationPageStyle;
+            }
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
