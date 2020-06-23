@@ -200,6 +200,21 @@ namespace XamKit
             }
         }
 
+        public bool IsSnapToItemNeeded
+        {
+            get
+            {
+                if (SnapPointsType == SnapPointsTypes.None)
+                {
+                    return false;
+                }
+                else
+                {
+                    return GetSnapToItemDelta(CurrentItemIndex) != 0;
+                }
+            }
+        }
+
         public CarouselLayout()
         {
             _viewportChildren = new List<View>();
@@ -254,6 +269,58 @@ namespace XamKit
             // Stop previous scroll animation
             this.AbortAnimation(_scrollToItemAnimationName);
 
+            double panDelta = GetSnapToItemDelta(index);
+
+            if (isAnimated)
+            {
+                _panStartedX = HorizontalOffset;
+                _previousTotalX = HorizontalOffset;
+                double newHorizontalOffset = HorizontalOffset + panDelta;
+
+                // Create pan animation
+
+                Animation scrollAnimation = new Animation(d =>
+                {
+                    UpdateChildren(Width, Height, d);
+
+                }, HorizontalOffset, newHorizontalOffset);
+
+                if (IsPanning)
+                {
+                    return;
+                }
+
+                // Do pan animation
+                scrollAnimation.Commit(this, _scrollToItemAnimationName, 64, ScrollToItemAnimationDuration, Easing.CubicOut, finished: (s, isAborted) =>
+                {
+                    if (isAborted == false)
+                    {
+                        UpdateChildren(Width, Height, newHorizontalOffset);
+
+                        _ignoreBringIntoView = true;
+                        CurrentItemIndex = CalculateCurrentItemIndex();
+                        _ignoreBringIntoView = false;
+
+                        ScrollEndedCommand?.Execute(CurrentItemIndex);
+                        ScrollEnded?.Invoke(this, new EventArgs());
+
+                        UpdateViewportItemsAppearing();
+                        RemoveVirtualizedChildren();
+                    }
+                });
+            }
+            else
+            {
+                UpdateChildren(Width, Height, panDelta);
+            }
+        }
+
+        /// <summary>
+        /// Get scroll delta to giving index
+        /// </summary>
+        private double GetSnapToItemDelta(int index)
+        {
+            int actualChildrenCount = IsVirtualizationEnabled ? ItemsGenerator.TotalItemsCount : Children.Count;
             View leftViewportChild = _viewportChildren.First();
 
             double leftViewportChildWidth = GetActualSize(leftViewportChild, Width, Height).Width;
@@ -345,48 +412,7 @@ namespace XamKit
                 }
             }
 
-            if (isAnimated)
-            {
-                _panStartedX = HorizontalOffset;
-                _previousTotalX = HorizontalOffset;
-                double newHorizontalOffset = HorizontalOffset + panDelta;
-
-                // Create pan animation
-
-                Animation scrollAnimation = new Animation(d =>
-                {
-                    UpdateChildren(Width, Height, d);
-
-                }, HorizontalOffset, newHorizontalOffset);
-
-                if (IsPanning)
-                {
-                    return;
-                }
-
-                // Do pan animation
-                scrollAnimation.Commit(this, _scrollToItemAnimationName, 64, ScrollToItemAnimationDuration, Easing.CubicOut, finished: (s, isAborted) =>
-                {
-                    if (isAborted == false)
-                    {
-                        UpdateChildren(Width, Height, newHorizontalOffset);
-
-                        _ignoreBringIntoView = true;
-                        CurrentItemIndex = CalculateCurrentItemIndex();
-                        _ignoreBringIntoView = false;
-
-                        ScrollEndedCommand?.Execute(CurrentItemIndex);
-                        ScrollEnded?.Invoke(this, new EventArgs());
-
-                        UpdateViewportItemsAppearing();
-                        RemoveVirtualizedChildren();
-                    }
-                });
-            }
-            else
-            {
-                UpdateChildren(Width, Height, panDelta);
-            }
+            return panDelta;
         }
 
         /// <summary>
@@ -832,7 +858,7 @@ namespace XamKit
 
             if (totalPanDelta <= 0)
             {
-                if (newPanLocation > actualItemsCount)
+                if (newPanLocation >= actualItemsCount)
                 {
                     if (IsFlipEnabled)
                     {
@@ -855,9 +881,9 @@ namespace XamKit
             {
                 if (newPanLocation < 0)
                 {
-                    if (IsFlipEnabled)
+                    if (IsFlipEnabled && Math.Abs(newPanLocation) > 0.001)
                     {
-                        newPanLocation = actualItemsCount + newPanLocation;
+                         newPanLocation = actualItemsCount + newPanLocation;
                     }
                     else
                     {
@@ -938,7 +964,11 @@ namespace XamKit
             //
 
             double newHorizontalOffset = Math.Min(panStartedX + newTotalX, maxHorizontalOffset);
-            
+
+            if (newHorizontalOffset >= 6 * Math.Pow(10, 18) || newPanLocation < 0)
+            {
+            }
+
             // Return both
             return (newHorizontalOffset, newPanLocation);
         }
@@ -948,35 +978,42 @@ namespace XamKit
         /// </summary>
         private View GetChildByIndex(int index)
         {
-            View item = null;
-
-            if (IsVirtualizationEnabled)
+            try
             {
-                _ignoreInvalidation = true;
+                View item = null;
 
-                item = ItemsGenerator.GenerateItemView(index);
-                if (Children.Contains(item) == false)
+                if (IsVirtualizationEnabled)
                 {
-                    if (Children.Count > index)
+                    _ignoreInvalidation = true;
+
+                    item = ItemsGenerator.GenerateItemView(index);
+                    if (Children.Contains(item) == false)
                     {
-                        Children.Insert(index, item);
+                        if (Children.Count > index)
+                        {
+                            Children.Insert(index, item);
+                        }
+                        else
+                        {
+                            Children.Add(item);
+                        }
                     }
-                    else
-                    {
-                        Children.Add(item);
-                    }
+
+                    ItemsGenerator.SetRealized(index);
+
+                    _ignoreInvalidation = false;
+                }
+                else
+                {
+                    item = Children.ElementAt(index);
                 }
 
-                ItemsGenerator.SetRealized(index);
-
-                _ignoreInvalidation = false;
+                return item;
             }
-            else
+            catch (Exception x)
             {
-                item = Children.ElementAt(index);
+                return null;
             }
-
-            return item;
         }
 
         /// <summary>
@@ -1004,7 +1041,7 @@ namespace XamKit
         /// </summary>
         public void OnPanUpdated(object sender, PanUpdatedEventArgs e)
         {
-            if (Children.Count == 0)
+            if (Children.Count == 0 || IsPanEnabled == false)
             {
                 return;
             }
@@ -1015,6 +1052,10 @@ namespace XamKit
                 _panStartedX = HorizontalOffset;
                 _previousTotalX = 0;
                 this.AbortAnimation(_scrollToItemAnimationName);
+
+                if (HorizontalOffset >= 6 * Math.Pow(10, 18))
+                {
+                }
             }
             else if (e.StatusType == GestureStatus.Running)
             {
@@ -1057,7 +1098,13 @@ namespace XamKit
         /// </summary>
         public void OnSwiped(SwipeDirection direction, double velocity)
         {
+            if (IsPanEnabled == false)
+            {
+                return;
+            }
+
             IsPanning = false;
+            this.AbortAnimation(_scrollToItemAnimationName);
 
             int actualChildrenCount = IsVirtualizationEnabled ? ItemsGenerator.TotalItemsCount : Children.Count;
             _panStartedX = HorizontalOffset;

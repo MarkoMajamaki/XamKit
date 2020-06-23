@@ -80,7 +80,7 @@ namespace XamKit.Droid
 
             if (e.ActionMasked == MotionEventActions.Move)
             {
-                bool isHandled = CheckIsTouchHandled(e);
+                bool isHandled = CheckIsTouchHandled(e) || Element.IsSnapToItemNeeded;
                 Parent?.RequestDisallowInterceptTouchEvent(isHandled);
 
                 if (isHandled)

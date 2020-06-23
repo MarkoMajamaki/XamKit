@@ -19,6 +19,7 @@ namespace XamKit.iOS
         private double _startX;
         private double _startY;
         private Point _previousPoint;
+        private bool _isPressed = false;
 
         public CarouselLayoutRenderer()
         {
@@ -34,14 +35,22 @@ namespace XamKit.iOS
         private bool ShouldRecognizeSimultaneously(UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer)
         {
             bool isPanGestureHandled = IsPanGestureHandled();
+
+            if ((isPanGestureHandled && _isPressed) || Element.IsSnapToItemNeeded)
+            {
+                otherGestureRecognizer.State = UIGestureRecognizerState.Cancelled;
+            }
+
             return isPanGestureHandled;
         }        
 
         private bool IsPanGestureHandled()
         {
             var localPoint = GetLocalPoint();
-            double delta = localPoint.X - _startX;
-            return Math.Abs(delta) > 10;
+            double deltaX = localPoint.X - _startX;
+            double deltaY = localPoint.Y - _startY;
+
+            return Math.Abs(deltaX) > Math.Abs(deltaY);
         }
 
         // Events
@@ -53,6 +62,7 @@ namespace XamKit.iOS
             _startX = localPoint.X;
             _startY = localPoint.Y;
             Element.OnPanUpdated(Element, new PanUpdatedEventArgs(GestureStatus.Started, 0, 0, 0));
+            _isPressed = true;
         }
 
         private void OnMoved()
@@ -63,6 +73,7 @@ namespace XamKit.iOS
             Element.OnPanUpdated(Element, new PanUpdatedEventArgs(GestureStatus.Running, 0, totalX, totalY));
 
             _previousPoint = localPoint;
+            _isPressed = true;
         }
 
         private void OnReleased()
@@ -89,6 +100,8 @@ namespace XamKit.iOS
                     Element.OnSwiped(SwipeDirection.Right, velocity);
                 }
             }
+
+            _isPressed = false;
         }
 
         private Point GetLocalPoint()
