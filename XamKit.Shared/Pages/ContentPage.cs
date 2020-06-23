@@ -44,7 +44,7 @@ namespace XamKit
         /// <summary>
         /// Is debug text enabled
         /// </summary>
-        public bool IsDebugEnabled { get; set; } = true;
+        public bool IsDebugEnabled { get; set; } = false;
 
 		/// <summary>
 		/// Navigation object (setted from XamKit.NavigationPage). Null if root page is NOT NavigationPage.
@@ -320,14 +320,19 @@ namespace XamKit
             }            
         }
 
+        protected virtual void OnSafeAreaInsetsChanged(Thickness thickness)
+        {
+            return; // TODO
+        }
+
         #endregion
-        
+
         #region INavigationAware
 
         /// <summary>
         /// Page is started to appearing on the screen with animation
         /// </summary>
-		public virtual void OnAppearing(AppearEventArgs args)
+        public virtual void OnAppearing(AppearEventArgs args)
 		{
             if (IsDebugEnabled) { Debug.WriteLine(NavigationBar.GetTitle(this) + ": OnAppearing"); }
 

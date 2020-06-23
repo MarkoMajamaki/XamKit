@@ -44,6 +44,7 @@ namespace XamKit
         // Animation process
         private double _menuAnimationProcess = 0;
         private double _visibilityAnimationProcess = 1;
+        private double _bottomSafeAreaHeight = 0;
 
         private bool _ignoreIsMenuOpenChanges = false;
         private bool _ignoreInvalidation = false;
@@ -790,6 +791,17 @@ namespace XamKit
             _shadowView.Opacity = 0.1;
             _shadowView.HeightRequest = ShadowHeight;
             Children.Add(_shadowView);
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                // Memory leaks!
+                RootPage.Instance.SafeAreaInsetsChanged += (s, t) =>
+                {
+                    _bottomSafeAreaHeight = t.Bottom;
+                    InvalidateMeasure();
+                    InvalidateLayout();
+                };
+            }
         }
 
         /// <summary>
@@ -937,6 +949,8 @@ namespace XamKit
                 totalSize.Height += LineHeightRequest;
             }
 
+            totalSize.Height += _bottomSafeAreaHeight;
+
             return new SizeRequest(totalSize, totalSize);
         }
 
@@ -1028,7 +1042,7 @@ namespace XamKit
                 _menuSize = _menuScrollView.Measure(width, double.PositiveInfinity, MeasureFlags.IncludeMargins);
 
                 actualMenuHeight = Math.Min(_menuSize.Request.Height, BottomMenuMaxHeight);
-                bottomMenuTop = height - (actualMenuHeight * _menuAnimationProcess);
+                bottomMenuTop = height - _bottomSafeAreaHeight - (actualMenuHeight * _menuAnimationProcess);
 
                 LayoutChildIntoBoundingRegion(_menuScrollView, new Rectangle(
                     0,
@@ -1137,19 +1151,19 @@ namespace XamKit
             // Layout background and line
             LayoutChildIntoBoundingRegion(_line, new Rectangle(
                 0, 
-                height - defaultItemsSize.Height - (actualMenuHeight * _menuAnimationProcess), 
+                height - defaultItemsSize.Height - (actualMenuHeight * _menuAnimationProcess) - _bottomSafeAreaHeight - LineHeightRequest, 
                 width, 
                 _line.HeightRequest));
 
             LayoutChildIntoBoundingRegion(_shadowView, new Rectangle(
                 0,
-                height - defaultItemsSize.Height - ItemsPadding.VerticalThickness - _shadowView.HeightRequest - (actualMenuHeight * _menuAnimationProcess),
+                height - defaultItemsSize.Height - ItemsPadding.VerticalThickness - _shadowView.HeightRequest - (actualMenuHeight * _menuAnimationProcess) - _bottomSafeAreaHeight - LineHeightRequest,
                 width,
                 _shadowView.HeightRequest));
 
             LayoutChildIntoBoundingRegion(_itemsBackground, new Rectangle(
                 0, 
-                height - defaultItemsSize.Height - ItemsPadding.VerticalThickness - (actualMenuHeight * _menuAnimationProcess), 
+                height - defaultItemsSize.Height - ItemsPadding.VerticalThickness - (actualMenuHeight * _menuAnimationProcess) - _bottomSafeAreaHeight, 
                 width, 
                 defaultItemsSize.Height + ItemsPadding.VerticalThickness + (_menuSize.Request.Height * _menuAnimationProcess)));
         }

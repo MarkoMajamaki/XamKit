@@ -19,7 +19,6 @@
         <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
         <Setter Property="AnimationEasing" Value="{x:Static Easing.Linear}"/>
         <Setter Property="HeightRequest" Value="56"/>
-        <Setter Property="TopSpacing" Value="0"/>
         <Setter Property="TitleAlignment" Value="Left"/>
         <Setter Property="TitleTemplate">
             <Setter.Value>
@@ -106,32 +105,46 @@
         <Setter Property="Animation" Value="SlideHorizontal"/>
         <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
         <Setter Property="AnimationEasing" Value="{x:Static Easing.CubicOut}"/>
-        <Setter Property="HeightRequest" Value="58"/>
-        <Setter Property="TopSpacing" Value="10"/>
         <Setter Property="TitleTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <Label Text="{Binding}" TextColor="Black" FontFamily="Helvetica" FontSize="16" VerticalOptions="Center" FontAttributes="Bold" LineBreakMode="TailTruncation" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+                    <Label
+                        Text="{Binding}"
+                        TextColor="Black"
+                        FontFamily="Helvetica"
+                        FontSize="16"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        LineBreakMode="TailTruncation"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="Start"/>
                 </DataTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="BackTitleTemplate">
             <Setter.Value>
                 <DataTemplate>  
-                    <xam:Button Text="{Binding}" Style="{StaticResource Button.TextStyle}" VerticalOptions="Fill" Padding="0" TextMargin="0" TextAlignment="Left"/>
+                    <xam:Button
+                        Text="{Binding}"
+                        Style="{StaticResource Button.TextStyle}"
+                        VerticalOptions="Center"
+                        Padding="0"
+                        TextMargin="0,13,0,11"
+                        TextAlignment="Left"
+                        FontSize="16" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="BackButtonTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <xam:BackButton 
+                    <xam:BackButton
                         HeightRequest="-1" 
                         WidthRequest="-1" 
                         BorderThickness="0"
                         IconWidthRequest="26"
                         IconHeightRequest="26"
-                        IconMargin="8,-3,0,0"
+                        IconMargin="8,9,0,9"
                         IconHorizontalOptions="Center" 
                         IconVerticalOptions="Center"
                         HorizontalOptions="Center"
@@ -201,7 +214,6 @@
         <Setter Property="LineHeight" Value="0"/>
         <Setter Property="Animation" Value="Fade"/>
         <Setter Property="HeightRequest" Value="40"/>
-        <Setter Property="TopSpacing" Value="0"/>
         <Setter Property="AnimationDuration" Value="{StaticResource AnimationDuration}"/>
         <Setter Property="AnimationEasing" Value="{x:Static Easing.Linear}"/>
         <Setter Property="BackTitleTemplate" Value="{x:Null}"/>
@@ -293,7 +305,6 @@
     <!--NavigationBar default style-->
     <Style x:Key="NavigationBar.iOS.ModalStyle" TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.iOS.DefaultStyle}">
         <Setter Property="HeightRequest" Value="58"/>
-        <Setter Property="TopSpacing" Value="0"/>
     </Style>
 
     <Style x:Key="NavigationBar.UWP.ModalStyle" TargetType="xam:NavigationBar" BasedOn="{StaticResource NavigationBar.UWP.DefaultStyle}">

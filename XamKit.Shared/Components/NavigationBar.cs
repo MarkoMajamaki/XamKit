@@ -9,6 +9,7 @@ using System.Windows.Input;
 
 // Xamarin
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace XamKit
 {
@@ -30,6 +31,7 @@ namespace XamKit
 
         private uint _rate = 64;
         private double _panPercent = 0;
+        private double _topSpacing = 0;
 
         // Horizontal bottom line
         private BoxView _bottomLine = null;
@@ -174,18 +176,6 @@ namespace XamKit
         {
             get { return (IList<ContentPage>)GetValue(NavigationHistoryProperty); }
             set { SetValue(NavigationHistoryProperty, value); }
-        }
-
-        /// <summary>
-        /// Top spacing
-        /// </summary>
-        public static readonly BindableProperty TopSpacingProperty =
-            BindableProperty.Create("TopSpacing", typeof(double), typeof(NavigationBar), 0.0);
-
-        public double TopSpacing
-        {
-            get { return (double)GetValue(TopSpacingProperty); }
-            set { SetValue(TopSpacingProperty, value); }
         }
 
         /// <summary>
@@ -697,6 +687,17 @@ namespace XamKit
             Binding bind = new Binding(ShadowHeightProperty.PropertyName);
             bind.Source = this;
             _shadowView.SetBinding(View.HeightRequestProperty, bind);
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                // Memory leaks!
+                RootPage.Instance.SafeAreaInsetsChanged += (s, t) =>
+                {
+                    _topSpacing = t.Top;
+                    InvalidateMeasure();
+                    InvalidateLayout();
+                };
+            }
         }
 
         #region INavigationBar
@@ -811,43 +812,43 @@ namespace XamKit
 
             if (_titleOnCenter != null && Children.Contains(_titleOnCenter))
             {
-                LayoutChildIntoBoundingRegion(_titleOnCenter, new Rectangle(0, TopSpacing, _titleOnCenterSize.Width, height - TopSpacing - LineHeight));               
+                LayoutChildIntoBoundingRegion(_titleOnCenter, new Rectangle(0, _topSpacing, _titleOnCenterSize.Width, height - _topSpacing - LineHeight));               
             }
             if (_customTitleOnCenter != null && Children.Contains(_customTitleOnCenter))
             {
-                LayoutChildIntoBoundingRegion(_customTitleOnCenter, new Rectangle(0, TopSpacing, _customTitleOnCenterSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customTitleOnCenter, new Rectangle(0, _topSpacing, _customTitleOnCenterSize.Width, height - _topSpacing - LineHeight));
             }
             if (_titleOnHidden != null && Children.Contains(_titleOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_titleOnHidden, new Rectangle(0, TopSpacing, _titleOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_titleOnHidden, new Rectangle(0, _topSpacing, _titleOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
             if (_customTitleOnHidden != null && Children.Contains(_customTitleOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_customTitleOnHidden, new Rectangle(0, TopSpacing, _customTitleOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customTitleOnHidden, new Rectangle(0, _topSpacing, _customTitleOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
             if (_backTitle != null && Children.Contains(_backTitle))
             {
-                LayoutChildIntoBoundingRegion(_backTitle, new Rectangle(0, TopSpacing, _backTitleSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_backTitle, new Rectangle(0, _topSpacing, _backTitleSize.Width, height - _topSpacing - LineHeight));
             }
             if (_customBackTitle != null && Children.Contains(_customBackTitle))
             {
-                LayoutChildIntoBoundingRegion(_customBackTitle, new Rectangle(0, TopSpacing, _customBackTitleSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customBackTitle, new Rectangle(0, _topSpacing, _customBackTitleSize.Width, height - _topSpacing - LineHeight));
             }
             if (_backTitleOnHidden != null && Children.Contains(_backTitleOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_backTitleOnHidden, new Rectangle(0, TopSpacing, _backTitleOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_backTitleOnHidden, new Rectangle(0, _topSpacing, _backTitleOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
             if (_customBackTitleOnHidden != null && Children.Contains(_customBackTitleOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_customBackTitleOnHidden, new Rectangle(0, TopSpacing, _customBackTitleOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customBackTitleOnHidden, new Rectangle(0, _topSpacing, _customBackTitleOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
             if (_backButton != null && Children.Contains(_backButton))
             {
-                LayoutChildIntoBoundingRegion(_backButton, new Rectangle(0, TopSpacing, _backButtonSize.Width, height - TopSpacing - LineHeight));               
+                LayoutChildIntoBoundingRegion(_backButton, new Rectangle(0, _topSpacing, _backButtonSize.Width, height - _topSpacing - LineHeight));               
             }
             if (_closeButton != null && Children.Contains(_closeButton))
             {
-                LayoutChildIntoBoundingRegion(_closeButton, new Rectangle(width - _closeButtonSize.Width, TopSpacing, _closeButtonSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_closeButton, new Rectangle(width - _closeButtonSize.Width, _topSpacing, _closeButtonSize.Width, height - _topSpacing - LineHeight));
             }
 
             Size actualBackButtonSize = new Size();
@@ -863,23 +864,23 @@ namespace XamKit
 
             if (_rightView != null && Children.Contains(_rightView))
             {
-                LayoutChildIntoBoundingRegion(_rightView, new Rectangle(width - _rightViewSize.Width - actualCloseButtonSize.Width, TopSpacing, _rightViewSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_rightView, new Rectangle(width - _rightViewSize.Width - actualCloseButtonSize.Width, _topSpacing, _rightViewSize.Width, height - _topSpacing - LineHeight));
             }
             if (_rightViewOnHidden != null && Children.Contains(_rightViewOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_rightViewOnHidden, new Rectangle(width - _rightViewOnHiddenSize.Width - actualCloseButtonSize.Width, TopSpacing, _rightViewOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_rightViewOnHidden, new Rectangle(width - _rightViewOnHiddenSize.Width - actualCloseButtonSize.Width, _topSpacing, _rightViewOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
             if (_searchView != null && Children.Contains(_searchView) && _searchView.InputTransparent == false)
             {
-                LayoutChildIntoBoundingRegion(_searchView, new Rectangle(actualBackButtonSize.Width, TopSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_searchView, new Rectangle(actualBackButtonSize.Width, _topSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width, height - _topSpacing - LineHeight));
             }
             if (_customContent != null && Children.Contains(_customContent))
             {
-                LayoutChildIntoBoundingRegion(_customContent, new Rectangle(actualBackButtonSize.Width, TopSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customContent, new Rectangle(actualBackButtonSize.Width, _topSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewSize.Width, height - _topSpacing - LineHeight));
             }
             if (_customContentOnHidden != null && Children.Contains(_customContentOnHidden))
             {
-                LayoutChildIntoBoundingRegion(_customContentOnHidden, new Rectangle(actualBackButtonSize.Width, TopSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewOnHiddenSize.Width, height - TopSpacing - LineHeight));
+                LayoutChildIntoBoundingRegion(_customContentOnHidden, new Rectangle(actualBackButtonSize.Width, _topSpacing, width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewOnHiddenSize.Width, height - _topSpacing - LineHeight));
             }
 
             LayoutChildIntoBoundingRegion(_bottomLine, new Rectangle(0, height - _bottomLine.HeightRequest, width, _bottomLine.HeightRequest));
@@ -912,49 +913,49 @@ namespace XamKit
 
             if (_backButton != null)
             {
-                _backButtonSize = _backButton.Measure(width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _backButtonSize = _backButton.Measure(width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _backButtonSize.Height);
             }
 
             if (_rightView != null)
             {
-                _rightViewSize = _rightView.Measure(width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _rightViewSize = _rightView.Measure(width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _rightViewSize.Height);
             }
 
             if (_rightViewOnHidden != null)
             {
-                _rightViewOnHiddenSize = _rightViewOnHidden.Measure(width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _rightViewOnHiddenSize = _rightViewOnHidden.Measure(width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _rightViewOnHiddenSize.Height);
             }
 
             if (_closeButton != null && Children.Contains(_closeButton))
             {
-                _closeButtonSize = _closeButton.Measure(width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _closeButtonSize = _closeButton.Measure(width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _closeButtonSize.Height);
             }
 
             if (_titleOnCenter != null)
             {
-                _titleOnCenterSize = _titleOnCenter.Measure(width - _backButtonSize.Width - _rightViewSize.Width - _closeButtonSize.Width, height - TopSpacing - LineHeight, MeasureFlags.IncludeMargins).Request;
+                _titleOnCenterSize = _titleOnCenter.Measure(width - _backButtonSize.Width - _rightViewSize.Width - _closeButtonSize.Width, height - _topSpacing - LineHeight, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _titleOnCenterSize.Height);
             }
 
             if (_customTitleOnCenter != null)
             {
-                _customTitleOnCenterSize = _customTitleOnCenter.Measure(width - _backButtonSize.Width - _rightViewSize.Width - _closeButtonSize.Width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _customTitleOnCenterSize = _customTitleOnCenter.Measure(width - _backButtonSize.Width - _rightViewSize.Width - _closeButtonSize.Width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _customTitleOnCenterSize.Height);
             }
 
             if (_titleOnHidden != null)
             {
-                _titleOnHiddenSize = _titleOnHidden.Measure(width - _backButtonSize.Width - _rightViewOnHiddenSize.Width - _closeButtonSize.Width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _titleOnHiddenSize = _titleOnHidden.Measure(width - _backButtonSize.Width - _rightViewOnHiddenSize.Width - _closeButtonSize.Width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _titleOnHiddenSize.Height);
             }
 
             if (_customTitleOnHidden != null)
             {
-                _customTitleOnHiddenSize = _customTitleOnHidden.Measure(width - _backButtonSize.Width - _rightViewOnHiddenSize.Width - _closeButtonSize.Width, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _customTitleOnHiddenSize = _customTitleOnHidden.Measure(width - _backButtonSize.Width - _rightViewOnHiddenSize.Width - _closeButtonSize.Width, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _customTitleOnHiddenSize.Height);
             }
 
@@ -979,11 +980,11 @@ namespace XamKit
                     availableBackButtonWidth = width - _backButtonSize.Width - actualTitleOnCenterSize.Width - _rightViewSize.Width - _closeButtonSize.Width;
                 }
 
-                _backTitleSize = _backTitle.Measure(availableBackButtonWidth, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _backTitleSize = _backTitle.Measure(availableBackButtonWidth, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
 
                 if (_customBackTitle != null)
                 {
-                    _customBackTitleSize = _customBackTitle.Measure(availableBackButtonWidth, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                    _customBackTitleSize = _customBackTitle.Measure(availableBackButtonWidth, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                     totalSize.Height = Math.Max(totalSize.Height, _customBackTitleSize.Height);
                 }
                 else
@@ -1013,11 +1014,11 @@ namespace XamKit
                     availableBackButtonWidth = width - _backButtonSize.Width - actualTitleOnHiddenSize.Width - _rightViewOnHiddenSize.Width - _closeButtonSize.Width;
                 }
 
-                _backTitleOnHiddenSize = _backTitleOnHidden.Measure(availableBackButtonWidth, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                _backTitleOnHiddenSize = _backTitleOnHidden.Measure(availableBackButtonWidth, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
 
                 if (_customBackTitleOnHidden != null)
                 {
-                    _customBackTitleOnHiddenSize = _customBackTitleOnHidden.Measure(availableBackButtonWidth, height - LineHeight - TopSpacing, MeasureFlags.IncludeMargins).Request;
+                    _customBackTitleOnHiddenSize = _customBackTitleOnHidden.Measure(availableBackButtonWidth, height - LineHeight - _topSpacing, MeasureFlags.IncludeMargins).Request;
                     totalSize.Height = Math.Max(totalSize.Height, _customBackTitleOnHiddenSize.Height);
                 }
                 else
@@ -1039,21 +1040,21 @@ namespace XamKit
 
             if (_searchView != null && Children.Contains(_searchView) && _searchView.InputTransparent == false)
             {
-                _searchViewSize = _searchView.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width, height - LineHeight - TopSpacing).Request;
+                _searchViewSize = _searchView.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width, height - LineHeight - _topSpacing).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _searchViewSize.Height);
             }
             if (_customContent != null && Children.Contains(_customContent))
             {
-                _customContentSize = _customContent.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewSize.Width, height - LineHeight - TopSpacing).Request;
+                _customContentSize = _customContent.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewSize.Width, height - LineHeight - _topSpacing).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _customContentSize.Height);
             }
             if (_customContentOnHidden != null && Children.Contains(_customContentOnHidden))
             {
-                _customContentOnHiddenSize = _customContentOnHidden.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewOnHiddenSize.Width, height - LineHeight - TopSpacing).Request;
+                _customContentOnHiddenSize = _customContentOnHidden.Measure(width - actualBackButtonSize.Width - actualCloseButtonSize.Width - _rightViewOnHiddenSize.Width, height - LineHeight - _topSpacing).Request;
                 totalSize.Height = Math.Max(totalSize.Height, _customContentOnHiddenSize.Height);
             }
 
-            totalSize.Height += TopSpacing;
+            totalSize.Height += _topSpacing;
             totalSize.Height = Math.Min(totalSize.Height, height);
          
             return new SizeRequest(totalSize, totalSize);

@@ -22,5 +22,15 @@ namespace XamKit.iOS
                 v.GestureRecognizers = null;
             }
         }
+
+        public override void ViewSafeAreaInsetsDidChange()
+        {
+            base.ViewSafeAreaInsetsDidChange();
+
+            if (Element is XamKit.RootPage page)
+            {
+                page.SafeAreaUpdated();
+            }
+        }
     }
 }
