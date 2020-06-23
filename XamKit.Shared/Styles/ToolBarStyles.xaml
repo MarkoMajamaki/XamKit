@@ -214,7 +214,7 @@
         </Setter>
         <Setter Property="HideEasingFunction" Value="{x:Static Easing.CubicOut}"/>
         <Setter Property="ShowEasingFunction" Value="{x:Static Easing.CubicOut}"/>
-        <Setter Property="ShowMenuEasingFunction" Value="{x:Static one:AnimationUtils.EaseOutQuint}"/>
+        <Setter Property="ShowMenuEasingFunction" Value="{x:Static xam:AnimationUtils.EaseOutQuint}"/>
         <Setter Property="HideMenuEasingFunction" Value="{x:Static Easing.CubicOut}"/>
         <Setter Property="ItemAddAnimation" Value="{StaticResource ToolBar.ItemAddAnimation}"/>
         <Setter Property="ItemAddAllAnimation" Value="{StaticResource ToolBar.ItemAddAllAnimation}"/>

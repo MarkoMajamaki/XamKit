@@ -74,12 +74,12 @@
         <Setter Property="ExtraTextHoverColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="IconHoverColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="BorderHoverColor" Value="{StaticResource PrimaryColor}"/>
-        <Setter Property="BackgroundHoverColor" Value="{one:Color Source={StaticResource PrimaryColor}, Lightness=0.9}"/>
+        <Setter Property="BackgroundHoverColor" Value="{xam:Color Source={StaticResource PrimaryColor}, Lightness=0.9}"/>
         <Setter Property="TextPressedColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="ExtraTextPressedColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="IconPressedColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="BorderPressedColor" Value="{StaticResource PrimaryColor}"/>
-        <Setter Property="BackgroundPressedColor" Value="{one:Color Source={StaticResource PrimaryColor}, Lightness=0.75}"/>
+        <Setter Property="BackgroundPressedColor" Value="{xam:Color Source={StaticResource PrimaryColor}, Lightness=0.75}"/>
         <Setter Property="TextDisabledColor" Value="{StaticResource Gray7}"/>
         <Setter Property="ExtraTextDisabledColor" Value="{StaticResource Gray7}"/>
         <Setter Property="IconDisabledColor" Value="{StaticResource Gray7}"/>

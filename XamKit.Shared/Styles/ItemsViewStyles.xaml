@@ -21,7 +21,7 @@
         OffsetXStart="20"
         OffsetXStartTime="0"
         OffsetXEndTime="1"
-        OffsetAnimationEasing="{x:Static one:AnimationUtils.EaseOutQuint}">
+        OffsetAnimationEasing="{x:Static xam:AnimationUtils.EaseOutQuint}">
     </xam:ItemAnimation>
 
     <xam:ItemAnimation
@@ -34,7 +34,7 @@
         OffsetXEnd="-20"
         OffsetXStartTime="0"
         OffsetXEndTime="0.9"
-        OffsetAnimationEasing="{x:Static one:AnimationUtils.EaseOutQuint}">
+        OffsetAnimationEasing="{x:Static xam:AnimationUtils.EaseOutQuint}">
     </xam:ItemAnimation>
     
     <xam:ItemAnimation

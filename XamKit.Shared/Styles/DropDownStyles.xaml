@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
 
             <Label 
-                Text="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
+                Text="{Binding Source={RelativeSource AncestorType={x:Type xam:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
                 FontSize="16"
                 FontAttributes="Bold"
                 HorizontalOptions="Center" 
@@ -78,7 +78,7 @@
 
             <Label 
                 x:Name="PART_CaptionLabel"
-                Text="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
+                Text="{Binding Source={RelativeSource AncestorType={x:Type xam:PopupRootLayout}}, Path=Popup.PlacementTarget.Caption}"
                 FontFamily="Roboto" 
                 TextColor="Black"                
                 FontSize="20"
@@ -105,7 +105,7 @@
 
             <xam:TextBox
                 x:Name="PART_SearchBox"
-                Placeholder="{Binding Source={RelativeSource AncestorType={x:Type one:PopupRootLayout}}, Path=Popup.PlacementTarget.Placeholder}"
+                Placeholder="{Binding Source={RelativeSource AncestorType={x:Type xam:PopupRootLayout}}, Path=Popup.PlacementTarget.Placeholder}"
                 VerticalOptions="Center"
                 IsLineVisible="False"
                 BorderThickness="0"
@@ -142,8 +142,8 @@
                 Margin="12,4"
                 VerticalOptions="Center"
                 Text="{Binding}"
-                TextColor="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=TextColor}"
-                FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+                TextColor="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=TextColor}"
+                FontSize="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=FontSize}"/>
         </xam:Border>
     </DataTemplate>
 
@@ -151,14 +151,14 @@
         <Label 
             Text="{Binding}"
             LineBreakMode="TailTruncation"
-            TextColor="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=TextColor}"
-            FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}">
+            TextColor="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=TextColor}"
+            FontSize="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=FontSize}">
             <!-- Margin fixes -->
             <Label.Triggers>
                 <MultiTrigger TargetType="Label">
                     <MultiTrigger.Conditions>
-                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=CaptionPlacement}" Value="Inside"/>
-                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=SelectionMode}" Value="Single"/>
+                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=CaptionPlacement}" Value="Inside"/>
+                        <BindingCondition Binding="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=SelectionMode}" Value="Single"/>
                     </MultiTrigger.Conditions>
                     <Setter Property="Margin" Value="0,-12,0,0"/>
                 </MultiTrigger>
@@ -179,11 +179,11 @@
                 <Label 
                     Text="+"
                     TextColor="White"
-                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=FontSize}"/>
                 <Label 
-                    Text="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=HiddenSelectedItemsCount, Mode=OneWay}"
+                    Text="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=HiddenSelectedItemsCount, Mode=OneWay}"
                     TextColor="White"
-                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type one:DropDown}}, Path=FontSize}"/>
+                    FontSize="{Binding Source={RelativeSource AncestorType={x:Type xam:DropDown}}, Path=FontSize}"/>
             </StackLayout>
         </xam:Border>
     </DataTemplate>
