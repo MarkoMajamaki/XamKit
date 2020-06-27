@@ -63,6 +63,18 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.4.6.0.967\lib\Xamarin.Mac\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\..\packages\SkiaSharp.1.68.3\lib\xamarinmac2.0\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Mac">
+      <HintPath>..\..\packages\SkiaSharp.Views.1.68.3\lib\xamarinmac2.0\SkiaSharp.Views.Mac.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms">
+      <HintPath>..\..\packages\SkiaSharp.Views.Forms.1.68.3\lib\xamarinmac2.0\SkiaSharp.Views.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Extended.Svg">
+      <HintPath>..\..\packages\SkiaSharp.Svg.1.60.0\lib\netstandard2.0\SkiaSharp.Extended.Svg.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -98,6 +110,10 @@
     <ProjectReference Include="..\XamKit.TestApp\XamKit.TestApp.csproj">
       <Project>{764B4B78-3FAE-4EC1-89C4-2C6B2E355322}</Project>
       <Name>XamKit.TestApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XamKit.Shared\XamKit.Shared.csproj">
+      <Project>{1812C406-72F3-48AE-B0C6-B576C4427BFD}</Project>
+      <Name>XamKit.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />

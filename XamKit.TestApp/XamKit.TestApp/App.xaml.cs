@@ -1,28 +1,14 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace XamKit.TestApp
+﻿namespace XamKit.TestApp
 {
-    public partial class App : Application
+    public partial class App : ShellApplication
     {
         public App()
         {
             InitializeComponent();
+            InitializeShellApplication();
 
-            MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            Navigation.PushAsync(new ComponentsPage());
+            MainMenuNavigation.PushAsync(new MainMenuPage());
         }
     }
 }

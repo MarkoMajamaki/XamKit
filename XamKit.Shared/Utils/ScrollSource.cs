@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -165,7 +166,7 @@ namespace XamKit
                         }
                         else
                         {
-                            target = -navigationBarHeight;
+                            target = -navigationBarHeight + RootPage.Instance.SafeAreaInsest.Top;
                             actualAnimationName = hideScrollBarAnimationName;
                         }
 
@@ -201,7 +202,7 @@ namespace XamKit
                 // Hide navigation bar based on scroll only
                 else
                 {
-                    navigationBar.TranslationY = Math.Min(0, Math.Max(-navigationBarHeight, navigationBar.TranslationY - delta));
+                    navigationBar.TranslationY = Math.Min(0, Math.Max(-navigationBarHeight + RootPage.Instance.SafeAreaInsest.Top, navigationBar.TranslationY - delta));
                     navigationBarY = navigationBar.TranslationY;
                     headerLayout?.UpdateHeadersTranslationY(newScrollY, navigationBarHeight, navigationBarY, isNavigationBarFloating, isNavigationBarScrollable);
                 }

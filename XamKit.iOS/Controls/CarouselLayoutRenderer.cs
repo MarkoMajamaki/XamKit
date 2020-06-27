@@ -36,7 +36,7 @@ namespace XamKit.iOS
         {
             bool isPanGestureHandled = IsPanGestureHandled();
 
-            if ((isPanGestureHandled && _isPressed) || Element.IsSnapToItemNeeded)
+            if ((isPanGestureHandled && _isPressed) /*|| Element.IsSnapToItemNeeded*/)
             {
                 otherGestureRecognizer.State = UIGestureRecognizerState.Cancelled;
             }

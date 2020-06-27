@@ -23,6 +23,7 @@ namespace XamKit.TestApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            XamKit.iOS.Initializer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

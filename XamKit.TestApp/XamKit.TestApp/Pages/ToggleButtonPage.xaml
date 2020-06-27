@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.TestApp.ToggleButtonPage"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="ToggleButton">
+
+    <ScrollView>
+        <StackLayout Margin="12" Spacing="12">
+            <xam:ToggleButton Text="ToggleButton.TextStyle" Style="{StaticResource ToggleButton.TextStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.OutlinedStyle" Style="{StaticResource ToggleButton.OutlinedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.ContainedStyle" Style="{StaticResource ToggleButton.ContainedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.Black.OutlinedStyle" Style="{StaticResource ToggleButton.Black.OutlinedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.BlackTextStyle" Style="{StaticResource ToggleButton.BlackTextStyle}"/>
+
+            <xam:Separator Text="Icons"/>
+            <xam:ToggleButton Text="ToggleButton.OutlinedStyle" IconPlacement="Left" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource ToggleButton.OutlinedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.ContainedStyle" IconPlacement="Top" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource ToggleButton.ContainedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.Black.OutlinedStyle" IconPlacement="Right" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource ToggleButton.Black.OutlinedStyle}"/>
+            <xam:ToggleButton Text="ToggleButton.BlackTextStyle" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource ToggleButton.BlackTextStyle}"/>
+
+        </StackLayout>
+    </ScrollView>
+
+</xam:ContentPage>

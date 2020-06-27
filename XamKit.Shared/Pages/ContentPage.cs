@@ -273,13 +273,13 @@ namespace XamKit
 
             Rectangle contentLocation = new Rectangle(0, 0, width, height - _footerSize.Request.Height);
 
-            if (_contentElement != null && _contentElement.IsVisible && Children.Contains(_contentElement) && _contentElement.Bounds != contentLocation)
+            if (_contentElement != null && _contentElement.IsVisible && Children.Contains(_contentElement) /*&& _contentElement.Bounds != contentLocation*/)
             {
                 LayoutChildIntoBoundingRegion(_contentElement, contentLocation);
             }
 
             Rectangle footerLocation = new Rectangle(0, height - _footerSize.Request.Height, width, _footerSize.Request.Height);
-            if (_footerElement != null && _footerElement.IsVisible && Children.Contains(_footerElement) && _footerElement.Bounds != footerLocation)
+            if (_footerElement != null && _footerElement.IsVisible && Children.Contains(_footerElement) /*&& _footerElement.Bounds != footerLocation*/)
             {
                 LayoutChildIntoBoundingRegion(_footerElement, footerLocation);
             }

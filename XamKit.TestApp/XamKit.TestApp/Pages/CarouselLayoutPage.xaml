@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.TestApp.CarouselLayoutPage"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="CarouselLayout">
+
+    <xam:ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="xam:Button" BasedOn="{StaticResource Button.ContainedStyle}">
+                <Setter Property="IsEnabled" Value="False"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="HeightRequest" Value="200"/>
+                <Setter Property="Margin" Value="12,0,0,0"/>
+                <Setter Property="FontSize" Value="40"/>
+            </Style>
+
+            <Style TargetType="xam:Separator" BasedOn="{StaticResource Separator.LargeStyle}">
+                <Setter Property="LineHeightRequest" Value="0"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextMargin" Value="12"/>
+            </Style>
+
+            <Style TargetType="xam:DropDown" BasedOn="{StaticResource DropDown.Android.FilledStyle}">
+                <Setter Property="Margin" Value="12,0"/>
+            </Style>
+        </ResourceDictionary>
+    </xam:ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Spacing="0">
+
+            <xam:Separator Text="CarouselLayout with fixed children" LineHeightRequest="0"/>
+
+            <xam:CarouselLayout x:Name="_fixedCarouselLayout">
+                <xam:Button Text="0"/>
+                <xam:Button Text="1"/>
+                <xam:Button Text="2"/>
+                <xam:Button Text="3"/>
+                <xam:Button Text="4"/>
+                <xam:Button Text="5"/>
+                <xam:Button Text="6"/>
+                <xam:Button Text="7"/>
+                <xam:Button Text="8"/>
+                <xam:Button Text="9"/>
+            </xam:CarouselLayout>
+
+            <xam:Separator Text="CarouselLayout with BindableLayout property"/>
+
+            <xam:CarouselLayout x:Name="_bindableCarouselLayout">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <xam:Button Text="{Binding}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </xam:CarouselLayout>
+
+            <xam:Separator Text="CarouselView with UI virtualization"/>
+
+            <xam:CarouselView x:Name="_carouselView">
+                <xam:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <xam:Button Text="{Binding}"/>
+                    </DataTemplate>
+                </xam:CarouselView.ItemTemplate>
+            </xam:CarouselView>
+
+            <xam:Separator Text="Settings"/>
+
+            <xam:DropDown Caption="PeekAreaInsest">
+                <xam:DropDownItem Text="Item1"/>
+                <xam:DropDownItem Text="Item2"/>
+                <xam:DropDownItem Text="Item3"/>
+                <xam:DropDownItem Text="Item4"/>
+            </xam:DropDown>
+
+        </StackLayout>
+    </ScrollView>
+</xam:ContentPage>

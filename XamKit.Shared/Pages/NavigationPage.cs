@@ -649,10 +649,14 @@ namespace XamKit
         /// </summary>
         private void LayoutChild(View child, Rectangle newLocation)
         {
+            /*
             if (child != null && child.Bounds != newLocation && Children.Contains(child))
             {
                 LayoutChildIntoBoundingRegion(child, newLocation);
             }
+            */
+
+            LayoutChildIntoBoundingRegion(child, newLocation);
         }
 
         /// <summary>
@@ -2470,6 +2474,7 @@ namespace XamKit
             private ShadowView _modalPageShadowView = null;
             private Border _modalPageBorder = null;
             private Size _modalPageSize = new Size();
+            private SizeRequest _navigationBarSize;
 
             private bool _isValidationIgnored = false;
 
@@ -2516,7 +2521,24 @@ namespace XamKit
             /// <summary>
             /// NavigationBar size (measured inside this layout container or parent)
             /// </summary>
-            public SizeRequest NavigationBarSize { get; set; }
+            public SizeRequest NavigationBarSize
+            {
+                get
+                {
+                    return _navigationBarSize;
+                }
+                set
+                {
+                    bool didChanged = value.Request.Height != _navigationBarSize.Request.Height;
+                    _navigationBarSize = value;
+
+                    if (didChanged)
+                    {
+                        InvalidateMeasure();
+                        InvalidateLayout();
+                    }
+                }
+            }
 
             /// <summary>
             /// Container Page

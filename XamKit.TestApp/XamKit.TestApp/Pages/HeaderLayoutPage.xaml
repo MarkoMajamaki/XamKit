@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.TestApp.HeaderLayoutPage"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="HeaderLayout"
+    xam:NavigationBar.Visibility="Visible"
+    xam:NavigationBar.IsFloating="false">
+
+    <xam:ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <DataTemplate x:Key="HeaderLayoutInsideScrollView">
+                <ScrollView xam:ScrollSource.IsEnabled="True">
+                    <xam:HeaderLayout>
+                        <xam:HeaderLayout.Header>
+                            <xam:Border BackgroundColor="Gray" HeightRequest="200" BorderThickness="1" BorderColor="Red">
+                                <Label Text="Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30"/>
+                            </xam:Border>
+                        </xam:HeaderLayout.Header>
+                        <xam:HeaderLayout.StickyHeader>
+                            <xam:Border BackgroundColor="DarkGray" HeightRequest="50" BorderThickness="1" BorderColor="Blue">
+                                <Label Text="StickyHeader" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30"/>
+                            </xam:Border>
+                        </xam:HeaderLayout.StickyHeader>
+                        <StackLayout Margin="12" Spacing="12">
+                            <BoxView HeightRequest="50" BackgroundColor="Red"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                        </StackLayout>
+                    </xam:HeaderLayout>
+                </ScrollView>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ScrollViewInsideHeaderLayout">
+                <xam:HeaderLayout>
+                    <xam:HeaderLayout.Header>
+                        <xam:Border BackgroundColor="Gray" HeightRequest="200" BorderThickness="1" BorderColor="Red">
+                            <Label Text="Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30"/>
+                        </xam:Border>
+                    </xam:HeaderLayout.Header>
+                    <xam:HeaderLayout.StickyHeader>
+                        <xam:Border BackgroundColor="DarkGray" HeightRequest="50" BorderThickness="1" BorderColor="Blue">
+                            <Label Text="StickyHeader" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30"/>
+                        </xam:Border>
+                    </xam:HeaderLayout.StickyHeader>
+                    <ScrollView xam:ScrollSource.IsEnabled="True">
+                        <StackLayout Margin="12" Spacing="12">
+                            <BoxView HeightRequest="50" BackgroundColor="Red"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                            <BoxView HeightRequest="50" BackgroundColor="LightGray"/>
+                        </StackLayout>
+                    </ScrollView>
+                </xam:HeaderLayout>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+    </xam:ContentPage.Resources>
+
+    <xam:ContentPage.Footer>
+        <ScrollView x:Name="_scrollView">
+            <StackLayout Margin="0,0,0,40">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="xam:Separator" BasedOn="{StaticResource Separator.SmallStyle}"/>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+            
+                <xam:Separator Text="HeaderLayout"/>
+                <StackLayout Spacing="12" Margin="12">
+                    <xam:RadioButton Text="ScrollView inside HeaderLayout" Tag="1" GroupName="HeaderLayoutMode" IsToggledChanged="HeaderLayoutModeChanged" IsToggled="True"/>
+                    <xam:RadioButton Text="HeaderLayout inside ScrollView" Tag="2" GroupName="HeaderLayoutMode" IsToggledChanged="HeaderLayoutModeChanged"/>
+                </StackLayout>
+
+                <xam:Separator Text="NavigationBar" LineHeightRequest="0"/>
+                <StackLayout Spacing="12" Margin="12">
+                    <xam:RadioButton Text="Visible"      Tag="1" GroupName="NavBarVisibility" IsToggledChanged="NavigationBarVisibilityChanged" IsToggled="True"/>
+                    <xam:RadioButton Text="Hidden"       Tag="2" GroupName="NavBarVisibility" IsToggledChanged="NavigationBarVisibilityChanged"/>
+                    <xam:RadioButton Text="Scroll"       Tag="3" GroupName="NavBarVisibility" IsToggledChanged="NavigationBarVisibilityChanged"/>
+                    <xam:RadioButton Text="SmoothScroll" Tag="4" GroupName="NavBarVisibility" IsToggledChanged="NavigationBarVisibilityChanged"/>
+                </StackLayout>
+                <xam:CheckBox Text="Is navigation bar floating" IsToggledChanged="IsNavigationBarFloatingChanged" IsToggled="False" Margin="12"/>
+            </StackLayout>
+        </ScrollView>
+    </xam:ContentPage.Footer>
+
+</xam:ContentPage>

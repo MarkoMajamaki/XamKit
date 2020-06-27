@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    xmlns:local="clr-namespace:XamKit.TestApp"
+    mc:Ignorable="d"
+    x:Class="XamKit.TestApp.ComponentsPage"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="Components"
+    xam:NavigationBar.BackButtonMode="Menu"
+    xam:NavigationBar.BackgroundColor="white"
+    xam:NavigationBar.IsShadowVisible="False"
+    xam:NavigationBar.IsLineVisible="False"
+    xam:NavigationBar.Visibility="Visible">
+
+    <xam:ToolBarLayout>
+        <xam:HeaderLayout>
+            <xam:HeaderLayout.StickyHeader>
+                <xam:TabBar
+                    x:Name="_tabBar"
+                    Style="{StaticResource TabBar.DefaultStyle}"
+                    BottomShadowLenght="{OnPlatform Default=8, iOS=0}"
+                    BottomLineHeightRequest="{OnPlatform Default=0, iOS=1}"
+                    ItemsLayoutOptions="{OnIdiom Default=Fill, Desktop=Start}"/>
+            </xam:HeaderLayout.StickyHeader>
+
+            <xam:TabView x:Name="_tabView" SnapPointsType="MandatorySingle" IsVirtualizingEnabled="False">
+
+                <xam:TabItem Header="Components">
+                    <CollectionView x:Name="_componentsItemsView" ItemsSource="{Binding Components}" xam:ScrollSource.IsEnabled="true">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <xam:Button
+                                    IconAssemblyName="XamKit.TestApp"
+                                    IconResourceKey="{Binding Icon}"
+                                    Text="{Binding Name}"
+                                    Command="{Binding Command}"
+                                    Style="{StaticResource Button.MenuStyle}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </xam:TabItem>
+                
+                <xam:TabItem Header="Layouts">
+                    <CollectionView x:Name="_layoutsItemsView" ItemsSource="{Binding Layouts}" xam:ScrollSource.IsEnabled="true">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <xam:Button
+                                    IconAssemblyName="XamKit.TestApp"
+                                    IconResourceKey="{Binding Icon}"
+                                    Text="{Binding Name}"
+                                    Command="{Binding Command}"
+                                    Style="{StaticResource Button.MenuStyle}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </xam:TabItem>
+                
+                <xam:TabItem Header="Shell">
+                    <CollectionView x:Name="_shellItemsView" ItemsSource="{Binding Layouts}" xam:ScrollSource.IsEnabled="true">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <xam:Button
+                                    IconAssemblyName="XamKit.TestApp"
+                                    IconResourceKey="{Binding Icon}"
+                                    Text="{Binding Name}"
+                                    Command="{Binding Command}"
+                                    Style="{StaticResource Button.MenuStyle}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </xam:TabItem>
+
+            </xam:TabView>
+        </xam:HeaderLayout>
+    </xam:ToolBarLayout>
+
+</xam:ContentPage>

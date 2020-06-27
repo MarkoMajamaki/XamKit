@@ -26,7 +26,7 @@ namespace XamKit
         /// Shadow lenght
         /// </summary>
         public static readonly BindableProperty ShadowLenghtProperty =
-            BindableProperty.Create("ShadowLenght", typeof(double), typeof(ShadowView), 0.0);
+            BindableProperty.Create("ShadowLenght", typeof(double), typeof(ShadowView), 8.0);
 
         public double ShadowLenght
         {
@@ -111,7 +111,7 @@ namespace XamKit
         /// Shadow color
         /// </summary>
         public static readonly BindableProperty ShadowColorProperty =
-            BindableProperty.Create("ShadowColor", typeof(Color), typeof(ShadowView), Color.Transparent);
+            BindableProperty.Create("ShadowColor", typeof(Color), typeof(ShadowView), Color.Black);
 
         public Color ShadowColor
         {

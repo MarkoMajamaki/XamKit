@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    x:Class="XamKit.TestApp.MainMenuPage"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Visibility="Hidden">
+    
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</xam:ContentPage>

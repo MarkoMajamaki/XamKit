@@ -88,7 +88,7 @@ namespace XamKit
 
             if (newLayout is CarouselLayout layout)
             {
-                Binding bind = new Binding(TabView.PeekAreaInsetsProperty.PropertyName);
+				Binding bind = new Binding(TabView.PeekAreaInsetsProperty.PropertyName);
                 bind.Source = this;
                 bind.Mode = BindingMode.TwoWay;
                 layout.SetBinding(CarouselLayout.PeekAreaInsetsProperty, bind);

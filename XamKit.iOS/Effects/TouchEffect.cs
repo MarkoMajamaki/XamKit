@@ -16,6 +16,7 @@ namespace XamKit.iOS
     {
         private UIView _view;
         private XamKit.TouchEffect _touchEffect = null;
+        private Point _pressedPoint;
 
         // Gestures
         private UIPressedGestureRecognizer _pressedGestureRecognizer = null;
@@ -34,6 +35,7 @@ namespace XamKit.iOS
                 _pressedGestureRecognizer.Pressed += OnPressed;
                 _pressedGestureRecognizer.Released += OnReleased;
                 _pressedGestureRecognizer.Canceled += OnCanceled;
+                _pressedGestureRecognizer.Moved += OnMoved;
                 _view.AddGestureRecognizer(_pressedGestureRecognizer);
             }
         }
@@ -58,7 +60,8 @@ namespace XamKit.iOS
         {
             if (_touchEffect != null)
             {
-                _touchEffect.OnTouchAction(Element, new TouchActionEventArgs(TouchActionType.Pressed, GetLocalPoint(), GetApplicationPoint(), true));
+                _pressedPoint = GetLocalPoint();
+                _touchEffect.OnTouchAction(Element, new TouchActionEventArgs(TouchActionType.Pressed, _pressedPoint, GetApplicationPoint(), true));
             }
         }
 
@@ -67,6 +70,14 @@ namespace XamKit.iOS
             if (_touchEffect != null)
             {
                 _touchEffect.OnTouchAction(Element, new TouchActionEventArgs(TouchActionType.Cancelled, GetLocalPoint(), GetApplicationPoint(), false));
+            }
+        }
+
+        private void OnMoved()
+        {
+            if (_touchEffect != null)
+            {
+                _touchEffect.OnTouchAction(Element, new TouchActionEventArgs(TouchActionType.Move, GetLocalPoint(), GetApplicationPoint(), false));
             }
         }
 

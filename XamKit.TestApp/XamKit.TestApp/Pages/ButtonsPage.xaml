@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.TestApp.ButtonsPage"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="Buttons">
+
+    <ScrollView>
+        <StackLayout Margin="12" Spacing="12">
+            <xam:Button Text="Button.TextStyle" Style="{StaticResource Button.TextStyle}"/>
+            <xam:Button Text="Button.OutlinedStyle" Style="{StaticResource Button.OutlinedStyle}"/>
+            <xam:Button Text="Button.ContainedStyle" Style="{StaticResource Button.ContainedStyle}"/>
+            <xam:Button Text="Button.Black.OutlinedStyle" Style="{StaticResource Button.Black.OutlinedStyle}"/>
+            <xam:Button Text="Button.Black.ContainedStyle" Style="{StaticResource Button.Black.ContainedStyle}"/>
+            <xam:Button Text="Button.MenuStyle" Style="{StaticResource Button.MenuStyle}"/>
+            <xam:Button Text="Button.BlackTextStyle" Style="{StaticResource Button.BlackTextStyle}"/>
+
+            <xam:Separator Text="Icon"/>
+            <xam:Button Text="Button.OutlinedStyle" IconPlacement="Left" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.OutlinedStyle}"/>
+            <xam:Button Text="Button.ContainedStyle" IconPlacement="Top" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.ContainedStyle}"/>
+            <xam:Button Text="Button.Black.OutlinedStyle" IconPlacement="Right" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.Black.OutlinedStyle}"/>
+            <xam:Button Text="Button.Black.ContainedStyle" IconPlacement="Bottom" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.Black.ContainedStyle}"/>
+            <xam:Button Text="Button.MenuStyle" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.MenuStyle}"/>
+            <xam:Button Text="Button.BlackTextStyle" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.BlackTextStyle}"/>
+
+            <xam:Separator Text="RightContent"/>
+            <xam:Button Text="Button.MenuStyle" IconAssemblyName="XamKit.TestApp" IconResourceKey="Icons.texture-24px.svg" Style="{StaticResource Button.MenuStyle}">
+                <xam:Button.RightContent>
+                    <BoxView HeightRequest="20" WidthRequest="20" BackgroundColor="Red"/>
+                </xam:Button.RightContent>
+            </xam:Button>
+
+        </StackLayout>
+    </ScrollView>
+
+</xam:ContentPage>

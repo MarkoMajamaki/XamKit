@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xam:ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamKit.TestApp.ShadowViewPage"
+    xmlns:xam="clr-namespace:XamKit;assembly=XamKit.Shared"
+    Style="{StaticResource ContentPage.DefaultStyle}"
+    xam:NavigationBar.Title="ShadowView">
+
+    <ScrollView>
+        <StackLayout Margin="12" Spacing="50">
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center" CornerRadius="50"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center" CornerRadius="200"/>
+
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center" ShadowLenght="30"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center" ShadowLenght="30" CornerRadius="50"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" HorizontalOptions="Center" ShadowLenght="30" CornerRadius="200"/>
+
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" BorderBackgroundColor="Red" HorizontalOptions="Center"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" BorderBackgroundColor="Red" HorizontalOptions="Center" CornerRadius="50"/>
+            <xam:ShadowView WidthRequest="200" HeightRequest="200" ShadowOpacity="0.2" BorderBackgroundColor="Red" HorizontalOptions="Center" CornerRadius="200"/>
+        </StackLayout>
+    </ScrollView>
+
+</xam:ContentPage>

@@ -18,4 +18,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\XamKit.Shared\XamKit.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Icons\texture-24px.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\texture-24px.svg" />
+  </ItemGroup>
 </Project>

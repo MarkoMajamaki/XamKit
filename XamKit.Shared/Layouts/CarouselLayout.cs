@@ -380,20 +380,21 @@ namespace XamKit
             }
             else
             {
-                Size currentItemSize = GetActualSize(GetChildByIndex(CurrentItemIndex), Width, Height);
+                int actualCurrentItemIndex = (int)Math.Floor(_panLocation);
+                Size currentItemSize = GetActualSize(GetChildByIndex(actualCurrentItemIndex), Width, Height);
                 panDelta = (_panLocation % 1) * currentItemSize.Width;
 
-                if (index < CurrentItemIndex)
+                if (index < actualCurrentItemIndex)
                 {
-                    for (int i = index + 1; i < CurrentItemIndex; i++)
+                    for (int i = index; i < actualCurrentItemIndex; i++)
                     {
                         View child = GetChildByIndex(i);
                         panDelta += GetActualSize(child, Width, Height).Width;
                     }
                 }
-                else if (index > CurrentItemIndex)
+                else if (index > actualCurrentItemIndex)
                 {
-                    for (int i = CurrentItemIndex; i < index; i++)
+                    for (int i = actualCurrentItemIndex; i < index; i++)
                     {
                         View child = GetChildByIndex(i);
                         panDelta -= GetActualSize(child, Width, Height).Width;
@@ -401,13 +402,13 @@ namespace XamKit
                 }
                 else
                 {
-                    if (_panLocation > CurrentItemIndex)
+                    if (_panLocation > actualCurrentItemIndex)
                     {
-                        panDelta = (_panLocation % 1) * GetActualSize(GetChildByIndex(CurrentItemIndex), Width, Height).Width;
+                        panDelta = (_panLocation % 1) * GetActualSize(GetChildByIndex(actualCurrentItemIndex), Width, Height).Width;
                     }
-                    else if (CurrentItemIndex > 0)
+                    else if (actualCurrentItemIndex > 0)
                     {
-                        panDelta = -(1 - (_panLocation % 1)) * GetActualSize(GetChildByIndex(CurrentItemIndex - 1), Width, Height).Width;
+                        panDelta = -(1 - (_panLocation % 1)) * GetActualSize(GetChildByIndex(actualCurrentItemIndex - 1), Width, Height).Width;
                     }
                 }
             }

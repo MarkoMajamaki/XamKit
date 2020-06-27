@@ -399,7 +399,7 @@ namespace XamKit
             }
             else
             {
-                LayoutChild(_contentElement, new Rectangle(x, y, width, height));
+                LayoutChild(_contentElement, new Rectangle(x, RootPage.Instance.SafeAreaInsest.Top, width, height));
             }
         }
 
@@ -462,13 +462,12 @@ namespace XamKit
         /// </summary>
         public void UpdateHeadersTranslationY(double scrollY, double navigationBarHeight, double navigationBarY, bool isNavigationBarFloating, bool isNavigationBarScrollable)
         {
-            bool isHeaderLayoutInScrollViewer = false;
             double headerBottom = 0;
             double navigationBarBottom = navigationBarY + navigationBarHeight;
 
-            isHeaderLayoutInScrollViewer = VisualTreeHelper.GetParent<ScrollView>(this, typeof(NavigationPage)) != null;
+            bool isHeaderLayoutInScrollViewer = VisualTreeHelper.GetParent<ScrollView>(this, typeof(NavigationPage)) != null;
 
-            if (isNavigationBarFloating == false)
+            if (isNavigationBarFloating == false) // TODO
             {
                 headerBottom = navigationBarBottom;
             }
@@ -558,7 +557,7 @@ namespace XamKit
                         }
                         else
                         {
-                            _stickyHeaderElement.TranslationY = Math.Max(0, headerBottom);
+                            _stickyHeaderElement.TranslationY = 0; // Math.Max(0, headerBottom);
                         }
                     }
                 }
